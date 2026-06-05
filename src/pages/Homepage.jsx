@@ -4,12 +4,12 @@ import { profielen } from '../data/profielen'
 const klanten = ['Allco', 'LVE', 'Toplas', 'Groep Maes', 'Dethier', 'TechBuild']
 
 const usps = [
-  { icon: '⚡', titel: 'Binnen 3–5 dagen op de werf',     tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
+  { icon: '⚡', titel: 'Binnen 2 tot 4 weken op de werf', tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
   { icon: '🔁', titel: '80% van onze klanten komt terug', tekst: 'Niet omdat we goedkoopst zijn, maar omdat we leveren wat we beloven.' },
   { icon: '📋', titel: 'Papierwerk? Dat regelen wij',     tekst: 'Limosa, A1, RSZ, Dimona — alles in orde vóór dag één.' },
   { icon: '🤝', titel: 'Eén vast aanspreekpunt',          tekst: 'Geen callcenter. Direct iemand die uw werf kent.' },
   { icon: '✅', titel: 'Eerlijk over wat we leveren',     tekst: 'Competentiematrix per profiel — geen overselling, geen verrassingen.' },
-  { icon: '⚖️', titel: 'Juridisch volledig conform',     tekst: 'PC 124, sociale dumping, aansprakelijkheid — allemaal geregeld.' },
+  { icon: '⚖️', titel: 'Juridisch volledig conform',     tekst: 'Loon- en arbeidsvoorwaarden, sociale dumping, aansprakelijkheid — allemaal geregeld.' },
 ]
 
 const steps = [
@@ -196,7 +196,7 @@ export default function Homepage() {
               { getal: '15+',  label: 'Jaar actief in detachering' },
               { getal: '500+', label: 'Succesvolle plaatsingen' },
               { getal: '8',    label: 'Europese partnerlanden' },
-              { getal: '3–5',  label: 'Werkdagen tot op de werf' },
+              { getal: '2–4',  label: 'Weken tot op de werf' },
             ].map(s => (
               <div key={s.label}>
                 <div style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, color: '#2563EB', letterSpacing: '-.04em' }}>{s.getal}</div>
@@ -239,7 +239,7 @@ export default function Homepage() {
               { label: 'A1-attest',          bg: '#EFF6FF', color: '#2563EB', border: '#BFDBFE' },
               { label: 'VCA-certificering',  bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
               { label: 'Dimona & RSZ',       bg: '#FAF5FF', color: '#7C3AED', border: '#DDD6FE' },
-              { label: 'PC 124 minimumloon', bg: '#F0FDFA', color: '#0F766E', border: '#99F6E4' },
+              { label: 'Minimumloon conform PC', bg: '#F0FDFA', color: '#0F766E', border: '#99F6E4' },
             ].map(c => (
               <span key={c.label} style={{ fontSize: 12, fontWeight: 600, padding: '5px 12px', borderRadius: 9999, border: `1px solid ${c.border}`, background: c.bg, color: c.color }}>
                 ✓ {c.label}

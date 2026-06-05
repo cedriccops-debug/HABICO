@@ -31,7 +31,9 @@
       "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\" -t plain)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(gh pr *)",
+      "Bash(brew list *)"
     ]
   }
 }

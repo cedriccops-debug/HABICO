@@ -8,15 +8,15 @@ const HABICO_STATS = [
   { getal: '100%', label: 'Limosa & A1 geregeld' },
 ]
 
-const getVoordelen = (pc) => [
-  { icon: '⚡', titel: 'Snel inzetbaar',               tekst: 'Gecertificeerde vaklieden beschikbaar binnen 3 tot 5 werkdagen.' },
-  { icon: '🗣️', titel: 'Taalvaardigheid',              tekst: 'Minimaal één persoon per ploeg spreekt Nederlands of Engels.' },
-  { icon: '💶', titel: 'Geen onnodige kosten',          tekst: 'Geen werving, selectie, opleiding of ontslag. U betaalt gepresteerde dagen.' },
-  { icon: '📋', titel: 'Administratief ontzorgd',      tekst: 'Limosa, A1, RSZ & Dimona — allemaal in orde vóór dag één.' },
-  { icon: '📍', titel: 'Actief in heel Europa',        tekst: 'Van Antwerpen tot Brussel en verder. Ons netwerk dekt heel Europa.' },
-  { icon: '🦺', titel: "Eigen PBM's & gereedschap",   tekst: 'Alle vaklieden beschikken over eigen persoonlijke beschermingsmiddelen.' },
-  { icon: '✅', titel: 'Geverifieerde certificaten',   tekst: 'VCA, EN ISO 9606, BA4/BA5 — elk attest gecontroleerd op geldigheid.' },
-  { icon: '⚖️', titel: `Juridisch conform PC ${pc}`,  tekst: 'Minimumloon, vakantiegeld, eindejaarspremie — alles inbegrepen.' },
+const getVoordelen = (_pc) => [
+  { icon: '⚡', titel: 'Snel inzetbaar',             tekst: 'Binnen 2 tot 4 weken staat uw ploeg op de werf — volledig klaar voor de opdracht.' },
+  { icon: '🗣️', titel: 'Taalvaardig',               tekst: 'Minimaal één persoon per ploeg spreekt Nederlands of Engels.' },
+  { icon: '💶', titel: 'Geen onnodige kosten',        tekst: 'Geen werving, selectie, opleiding of ontslag. U betaalt gepresteerde dagen.' },
+  { icon: '📋', titel: 'Administratief ontzorgd',    tekst: 'Limosa, A1, RSZ & Dimona — allemaal in orde vóór dag één.' },
+  { icon: '🌍', titel: 'Actief in heel Europa',      tekst: 'Wij werken met vaste partners uit heel Europa en kunnen klanten in heel Europa bedienen.' },
+  { icon: '🦺', titel: "Eigen PBM's en gereedschap", tekst: 'Elke vakman beschikt over eigen persoonlijke beschermingsmiddelen én vakspecifiek gereedschap.' },
+  { icon: '✅', titel: 'Geverifieerde certificaten', tekst: 'Elk attest en elke kwalificatie wordt gecontroleerd op geldigheid vóór de start van de opdracht.' },
+  { icon: '⚖️', titel: 'Juridisch correct',         tekst: 'Wij werken volledig conform de geldende loon- en arbeidsvoorwaarden. Minimumloon, vakantiegeld en eindejaarspremie — alles inbegrepen.' },
 ]
 
 const COMPLIANCE = [
