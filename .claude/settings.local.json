@@ -28,7 +28,10 @@
       "Bash(extract-text \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\")",
       "Bash(pandoc \"/Users/cedriccops/Downloads/Job Description electricians Elektro Vdh.docx\" -t plain)",
       "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bedrijf op locatie.docx\" -t plain)",
-      "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\" -t plain)"
+      "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\" -t plain)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
