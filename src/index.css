@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --navy:        #0A1628;   /* deepest dark — hero, footer                     */
+  --navy-mid:    #162035;   /* dark sections                                    */
+  --blue:        #2563EB;   /* primary CTA — trust blue                         */
+  --blue-hover:  #1D4ED8;
+  --blue-light:  #EFF6FF;   /* section tints                                    */
+  --blue-pale:   #DBEAFE;
+  --slate:       #64748B;   /* body text secondary                              */
+  --border:      #E2E8F0;
+  --bg-alt:      #F8FAFC;   /* off-white section bg                             */
+  --radius-card: 16px;
+  --radius-btn:  9999px;    /* pill buttons                                     */
+  --shadow-card: 0 1px 3px rgba(0,0,0,.06), 0 4px 24px rgba(0,0,0,.07);
+  --shadow-card-hover: 0 4px 6px rgba(0,0,0,.07), 0 12px 40px rgba(37,99,235,.12);
+}
+
+/* ── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1E293B;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+main  { flex: 1; }
+
+/* ── Typography helpers ────────────────────────────────────────────────────── */
+.display {
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  /* no color — set via Tailwind utility at usage site */
+}
+.display-xl {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  /* no color — set via Tailwind utility at usage site */
+}
+.section-title {
+  font-size: clamp(1.625rem, 2.8vw, 2.375rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  /* no color — default inherits, override with text-* utility */
+}
+.label-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 9999px;
+}
+
+/* ── Card ──────────────────────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  padding: 1.5rem;          /* 24px — overridden by Tailwind p-* utility if added */
+}
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 13px 28px;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 4px 12px rgba(37,99,235,.3);
+}
+.btn-primary:hover {
+  background: var(--blue-hover);
+  box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 20px rgba(37,99,235,.35);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #0F172A;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-secondary:hover {
+  border-color: #94A3B8;
+  background: var(--bg-alt);
+}
+.btn-ghost-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost-white:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.5);
+  color: #fff;
+}
+
+/* ── Trust badge ───────────────────────────────────────────────────────────── */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.9);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Responsive helpers ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hidden-mobile { display: none !important; }
+  .show-mobile   { display: flex !important; }
+}
+@media (min-width: 1025px) {
+  .show-mobile   { display: none !important; }
+}
+
+/* ── Scrollbar hide ────────────────────────────────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Centred page container (replaces broken mx-auto in Tailwind v4) ───────── */
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media (max-width: 640px) {
+  .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* ── Section spacing ───────────────────────────────────────────────────────── */
+.section-py { padding-top: 96px; padding-bottom: 96px; }
+@media (max-width: 768px) { .section-py { padding-top: 64px; padding-bottom: 64px; } }
+
+/* ── Blueprint hero bg ─────────────────────────────────────────────────────── */
+.hero-mesh {
+  background:
+    /* subtle top glow — blueprint lamp */
+    radial-gradient(ellipse 70% 45% at 50% -5%, rgba(37,99,235,.22) 0%, transparent 65%),
+    /* soft accent — top-right */
+    radial-gradient(ellipse 30% 30% at 90% 50%, rgba(56,189,248,.09) 0%, transparent 55%),
+    /* blueprint paper base */
+    #071829;
+}
+
+/* Blueprint grid overlay — applied via inline div in the hero */
+.hero-blueprint-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    /* major grid lines every 96px */
+    linear-gradient(rgba(100,180,255,.13) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(100,180,255,.13) 1.5px, transparent 1.5px),
+    /* minor grid lines every 24px */
+    linear-gradient(rgba(100,180,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100,180,255,.05) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  pointer-events: none;
+}
+
+/* ── Divider line ──────────────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); }
+
+/* ── Animated pulse dot ────────────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .6; transform: scale(1.4); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }

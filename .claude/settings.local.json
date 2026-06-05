@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:euworkforce.com)",
+      "WebFetch(domain:lepaya.com)",
+      "WebFetch(domain:hipeople.com)",
+      "WebFetch(domain:www.ashbyhq.com)",
+      "Bash(curl -s http://localhost:5173)",
+      "WebFetch(domain:image.pollinations.ai)",
+      "Bash(sed -n '97,101p' \"/Users/cedriccops/Website HABICO/src/data/profielen.js\")",
+      "Bash(sed -n '142,146p' \"/Users/cedriccops/Website HABICO/src/data/profielen.js\")",
+      "Bash(sed -n '187,191p' \"/Users/cedriccops/Website HABICO/src/data/profielen.js\")",
+      "Bash(sed -n '232,236p' \"/Users/cedriccops/Website HABICO/src/data/profielen.js\")",
+      "Bash(sed -n '277,281p' \"/Users/cedriccops/Website HABICO/src/data/profielen.js\")",
+      "Bash(python3 -c ' *)",
+      "Bash(sed -i '' 's/tel:+3211000000/tel:+3289714100/g' components/Navbar.jsx pages/ProfielDetail.jsx pages/Homepage.jsx pages/SectorDetail.jsx pages/Contact.jsx)",
+      "Bash(sed -i '' 's/+32 11 00 00 00/+32 89 71 41 00/g' components/Navbar.jsx pages/ProfielDetail.jsx pages/Homepage.jsx pages/Contact.jsx)",
+      "Bash(sed -i '' 's/wa.me\\\\/3211000000/wa.me\\\\/3289714100/g' pages/ProfielDetail.jsx pages/Contact.jsx)",
+      "Bash(sed -i '' 's/Hasselt, België/Maasmechelen, België/g' pages/Contact.jsx pages/OverHabico.jsx)",
+      "Bash(sed -i '' 's/BTW BE0000\\\\.000\\\\.000/BTW BE 0810.889.415/g' components/Footer.jsx)",
+      "Read(//Users/cedriccops/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/8a1a4438-c626-4bd8-9cd1-af613957b6e8/a4d4b1dc-1825-4764-ae03-d40a4eba6a84/skills/docx/**)",
+      "Bash(extract-text \"/Users/cedriccops/Downloads/Job Description electricians Elektro Vdh.docx\")",
+      "Bash(extract-text \"/Users/cedriccops/Downloads/Verslag vragen bedrijf op locatie.docx\")",
+      "Bash(extract-text \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\")",
+      "Bash(pandoc \"/Users/cedriccops/Downloads/Job Description electricians Elektro Vdh.docx\" -t plain)",
+      "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bedrijf op locatie.docx\" -t plain)",
+      "Bash(pandoc \"/Users/cedriccops/Downloads/Verslag vragen bouwbedrijf.docx\" -t plain)"
+    ]
+  }
+}
