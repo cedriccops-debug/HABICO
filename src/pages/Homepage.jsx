@@ -59,7 +59,7 @@ export default function Homepage() {
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="hero-mesh" style={{ position: 'relative', overflow: 'hidden' }}>
+      <section className="hero-mesh hero-section">
         {/* Blueprint grid */}
         <div className="hero-blueprint-grid" />
 
@@ -86,28 +86,25 @@ export default function Homepage() {
           <circle cx="78%" cy="55%" r="140" stroke="rgba(100,180,255,0.07)" strokeWidth="1" fill="none" strokeDasharray="6 6" />
           <circle cx="78%" cy="55%" r="80" stroke="rgba(100,180,255,0.05)" strokeWidth="1" fill="none" />
         </svg>
-        <div className="wrap" style={{ position: 'relative', paddingTop: 96, paddingBottom: 96 }}>
+        <div className="wrap hero-inner" style={{ position: 'relative' }}>
           <div style={{ maxWidth: 680 }}>
-            <div className="trust-badge" style={{ marginBottom: 24, display: 'inline-flex' }}>
+            <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
               <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
               Gespecialiseerde vaklieden — snel inzetbaar
             </div>
-            <h1 style={{
-              fontSize: 'clamp(2.25rem, 5vw, 4.5rem)', fontWeight: 900,
-              lineHeight: 1.07, letterSpacing: '-.04em', color: '#fff', marginBottom: 24,
-            }}>
+            <h1 className="hero-h1">
               Gespecialiseerde bouwploegen,{' '}
               <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
             </h1>
-            <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(255,255,255,.7)', lineHeight: 1.7, marginBottom: 36, maxWidth: 560 }}>
+            <p className="hero-lead">
               HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 48 }}>
+            <div className="hero-cta-row">
               <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
                 Vraag uw ploeg aan →
               </Link>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            <div className="hero-badge-row">
               {[
                 { label: '15+ jaar ervaring',   e: '🏆' },
                 { label: '500+ plaatsingen',     e: '👷' },

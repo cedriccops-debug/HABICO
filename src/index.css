@@ -192,6 +192,71 @@ main  { flex: 1; }
 .section-py { padding-top: 96px; padding-bottom: 96px; }
 @media (max-width: 768px) { .section-py { padding-top: 64px; padding-bottom: 64px; } }
 
+/* ── Hero full-viewport layout ─────────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100svh - 68px);   /* always fills viewport minus navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-inner {
+  padding-top: 80px;
+  padding-bottom: 96px;
+}
+
+/* On short/small viewports, shrink padding so content stays visible */
+@media (max-width: 768px) {
+  .hero-inner { padding-top: 48px; padding-bottom: 56px; }
+}
+@media (max-width: 480px) {
+  .hero-inner { padding-top: 32px; padding-bottom: 40px; }
+}
+@media (max-height: 700px) {
+  .hero-inner { padding-top: 28px; padding-bottom: 28px; }
+}
+
+.hero-h1 {
+  font-size: clamp(1.65rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.07;
+  letter-spacing: -.04em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+@media (max-width: 480px) {
+  .hero-h1 { margin-bottom: 14px; }
+}
+
+.hero-lead {
+  font-size: clamp(.9rem, 1.5vw, 1.2rem);
+  color: rgba(255,255,255,.7);
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+@media (max-width: 480px) {
+  .hero-lead { margin-bottom: 20px; }
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+@media (max-width: 480px) {
+  .hero-cta-row { margin-bottom: 24px; }
+}
+
+.hero-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* ── Blueprint hero bg ─────────────────────────────────────────────────────── */
 .hero-mesh {
   background:
