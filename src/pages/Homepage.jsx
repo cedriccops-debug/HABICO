@@ -3,12 +3,6 @@ import { profielen } from '../data/profielen'
 
 const klanten = ['Allco', 'LVE', 'Toplas', 'Groep Maes', 'Dethier', 'TechBuild']
 
-const beschikbaarheid = [
-  { profiel: 'HVAC-monteurs',   aantal: 3, regio: 'Limburg' },
-  { profiel: 'Elektriciens',    aantal: 5, regio: 'Heel België' },
-  { profiel: 'Lassers TIG/MIG', aantal: 4, regio: 'Antwerpen' },
-]
-
 const usps = [
   { icon: '⚡', titel: 'Binnen 3–5 dagen op de werf',     tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
   { icon: '🔁', titel: '80% van onze klanten komt terug', tekst: 'Niet omdat we goedkoopst zijn, maar omdat we leveren wat we beloven.' },
@@ -96,14 +90,14 @@ export default function Homepage() {
           <div style={{ maxWidth: 680 }}>
             <div className="trust-badge" style={{ marginBottom: 24, display: 'inline-flex' }}>
               <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
-              Ploegen beschikbaar — snel inzetbaar
+              Gespecialiseerde vaklieden — snel inzetbaar
             </div>
             <h1 style={{
               fontSize: 'clamp(2.25rem, 5vw, 4.5rem)', fontWeight: 900,
               lineHeight: 1.07, letterSpacing: '-.04em', color: '#fff', marginBottom: 24,
             }}>
               Gespecialiseerde bouwploegen,{' '}
-              <span style={{ color: '#7BC4E2' }}>morgen beschikbaar</span>
+              <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
             </h1>
             <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(255,255,255,.7)', lineHeight: 1.7, marginBottom: 36, maxWidth: 560 }}>
               HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
@@ -112,17 +106,13 @@ export default function Homepage() {
               <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
                 Vraag uw ploeg aan →
               </Link>
-              <Link to="/beschikbare-ploegen" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>
-                Bekijk beschikbaarheid
-              </Link>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {[
-                { label: '15+ jaar ervaring', e: '🏆' },
-                { label: '200+ plaatsingen',   e: '👷' },
-                { label: 'Limosa gecertificeerd', e: '✅' },
-                { label: 'A1-attest aanwezig', e: '📋' },
-                { label: '8 landen actief',   e: '🌍' },
+                { label: '15+ jaar ervaring',   e: '🏆' },
+                { label: '500+ plaatsingen',     e: '👷' },
+                { label: 'Juridisch conform',    e: '⚖️' },
+                { label: 'Actief in heel Europa', e: '🌍' },
               ].map(t => (
                 <span key={t.label} className="trust-badge" style={{ fontSize: 13 }}>{t.e} {t.label}</span>
               ))}
@@ -132,36 +122,6 @@ export default function Homepage() {
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, #fff, transparent)' }} />
       </section>
 
-      {/* ── LIVE BESCHIKBAARHEID ─────────────────────────────────────────── */}
-      <section style={{ background: '#fff', paddingTop: 8, paddingBottom: 40 }}>
-        <div className="wrap">
-          <div style={{
-            background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: 16,
-            padding: '18px 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center',
-            justifyContent: 'space-between', gap: 16,
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span className="pulse-dot" style={{ width: 10, height: 10, background: '#22C55E', borderRadius: '50%', flexShrink: 0 }} />
-              <span style={{ fontSize: 14, fontWeight: 600, color: '#0F172A' }}>Nu beschikbaar</span>
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              {beschikbaarheid.map(b => (
-                <div key={b.profiel} style={{
-                  background: '#fff', border: '1px solid #BAE6FD', borderRadius: 10,
-                  padding: '6px 14px', fontSize: 14,
-                }}>
-                  <strong style={{ color: '#0369A1' }}>{b.aantal}×</strong>{' '}
-                  <span style={{ fontWeight: 500 }}>{b.profiel}</span>{' '}
-                  <span style={{ color: '#64748B' }}>— {b.regio}</span>
-                </div>
-              ))}
-            </div>
-            <Link to="/beschikbare-ploegen" style={{ fontSize: 14, fontWeight: 600, color: '#2563EB', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-              Alle profielen →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ── KLANTEN LOGOBAR ──────────────────────────────────────────────── */}
       <section style={{ background: '#fff', padding: '40px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
@@ -237,7 +197,7 @@ export default function Homepage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
             {[
               { getal: '15+',  label: 'Jaar actief in detachering' },
-              { getal: '200+', label: 'Succesvolle plaatsingen' },
+              { getal: '500+', label: 'Succesvolle plaatsingen' },
               { getal: '8',    label: 'Europese partnerlanden' },
               { getal: '3–5',  label: 'Werkdagen tot op de werf' },
             ].map(s => (

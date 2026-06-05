@@ -4,7 +4,6 @@ import Footer from './components/Footer'
 import Homepage from './pages/Homepage'
 import Profielen from './pages/Profielen'
 import ProfielDetail from './pages/ProfielDetail'
-import BeschikbarePloegen from './pages/BeschikbarePloegen'
 import HoeWerktHet from './pages/HoeWerktHet'
 import Referenties from './pages/Referenties'
 import WordPartner from './pages/WordPartner'
@@ -21,7 +20,6 @@ export default function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/profielen" element={<Profielen />} />
           <Route path="/profielen/:slug" element={<ProfielDetail />} />
-          <Route path="/beschikbare-ploegen" element={<BeschikbarePloegen />} />
           <Route path="/hoe-werkt-het" element={<HoeWerktHet />} />
           <Route path="/referenties" element={<Referenties />} />
           <Route path="/word-partner" element={<WordPartner />} />

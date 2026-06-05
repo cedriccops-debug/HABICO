@@ -3,20 +3,20 @@ import { profielen } from '../data/profielen'
 
 const HABICO_STATS = [
   { getal: '15+',  label: 'Jaar actief' },
-  { getal: '200+', label: 'Plaatsingen' },
+  { getal: '500+', label: 'Plaatsingen' },
   { getal: '8',    label: 'Landen' },
   { getal: '100%', label: 'Limosa & A1 geregeld' },
 ]
 
-const VOORDELEN = [
+const getVoordelen = (pc) => [
   { icon: '⚡', titel: 'Snel inzetbaar',               tekst: 'Gecertificeerde vaklieden beschikbaar binnen 3 tot 5 werkdagen.' },
   { icon: '🗣️', titel: 'Taalvaardigheid',              tekst: 'Minimaal één persoon per ploeg spreekt Nederlands of Engels.' },
   { icon: '💶', titel: 'Geen onnodige kosten',          tekst: 'Geen werving, selectie, opleiding of ontslag. U betaalt gepresteerde dagen.' },
   { icon: '📋', titel: 'Administratief ontzorgd',      tekst: 'Limosa, A1, RSZ & Dimona — allemaal in orde vóór dag één.' },
-  { icon: '📍', titel: 'Actief in heel België',        tekst: 'Van Antwerpen tot Brussel en Hasselt. Ons netwerk dekt alles.' },
+  { icon: '📍', titel: 'Actief in heel Europa',        tekst: 'Van Antwerpen tot Brussel en verder. Ons netwerk dekt heel Europa.' },
   { icon: '🦺', titel: "Eigen PBM's & gereedschap",   tekst: 'Alle vaklieden beschikken over eigen persoonlijke beschermingsmiddelen.' },
   { icon: '✅', titel: 'Geverifieerde certificaten',   tekst: 'VCA, EN ISO 9606, BA4/BA5 — elk attest gecontroleerd op geldigheid.' },
-  { icon: '⚖️', titel: 'Juridisch conform PC 124',   tekst: 'Minimumloon, vakantiegeld, eindejaarspremie — alles inbegrepen.' },
+  { icon: '⚖️', titel: `Juridisch conform PC ${pc}`,  tekst: 'Minimumloon, vakantiegeld, eindejaarspremie — alles inbegrepen.' },
 ]
 
 const COMPLIANCE = [
@@ -151,7 +151,7 @@ export default function ProfielDetail() {
               </Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {VOORDELEN.map(v => (
+              {getVoordelen(profiel.pc).map(v => (
                 <div key={v.titel} className="card" style={{ padding: 20, display: 'flex', gap: 14 }}>
                   <div style={{ width: 40, height: 40, borderRadius: 10, background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{v.icon}</div>
                   <div>

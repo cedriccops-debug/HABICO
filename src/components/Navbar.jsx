@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const links = [
   { to: '/profielen',           label: 'Profielen' },
-  { to: '/beschikbare-ploegen', label: 'Beschikbaarheid' },
   { to: '/hoe-werkt-het',       label: 'Hoe werkt het' },
   { to: '/referenties',         label: 'Referenties' },
   { to: '/word-partner',        label: 'Word partner' },
