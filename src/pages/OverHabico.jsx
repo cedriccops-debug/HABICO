@@ -1,8 +1,9 @@
 export default function OverHabico() {
   const team = [
-    { naam: 'Tom Habico', rol: 'Zaakvoerder & Commercieel', initials: 'TH' },
-    { naam: 'Sarah Claes', rol: 'Operationeel Coördinator', initials: 'SC' },
-    { naam: 'Michał Kowalski', rol: 'Partner Relations (PL/RO)', initials: 'MK' },
+    { naam: 'Charles Cops',       rol: 'Zaakvoerder',  foto: '/team/Charles_square.jpg' },
+    { naam: 'Joanna Foltynska',   rol: 'Operations',   foto: '/team/Joanna_square.jpg'  },
+    { naam: 'Elisabeth Loyen',    rol: 'Key Account',  foto: '/team/1711020732588.jpeg' },
+    { naam: 'Cedric Cops',        rol: 'Key Account',  foto: '/team/Cedric.jpg'  },
   ]
 
   const mijlpalen = [
@@ -11,31 +12,68 @@ export default function OverHabico() {
     { jaar: '2015', tekst: 'Uitbreiding naar Roemenië en Slowakije' },
     { jaar: '2018', tekst: '100+ actieve plaatsingen bereikt' },
     { jaar: '2020', tekst: 'Gecertificeerde Limosa/A1-verwerking geautomatiseerd' },
-    { jaar: '2024', tekst: '200+ plaatsingen — 8 landen actief' },
+    { jaar: '2024', tekst: '500+ plaatsingen — actief in heel Europa' },
   ]
 
   return (
     <div>
-      {/* Hero */}
-      <section style={{ background: '#0A1628', padding: '96px 0' }}>
+      {/* Team */}
+      <section style={{ background: '#fff', padding: '96px 0 96px' }}>
         <div className="wrap">
-          <span className="label-chip" style={{ background: 'rgba(37,99,235,.15)', color: '#93C5FD', marginBottom: 20 }}>
-            Over ons
-          </span>
-          <h1 style={{ fontSize: 'clamp(2rem,4.5vw,3.75rem)', fontWeight: 900, lineHeight: 1.08, letterSpacing: '-.035em', color: '#fff', marginBottom: 16 }}>
-            Over HABICO
-          </h1>
-          <p style={{ fontSize: 18, color: '#94A3B8', maxWidth: 560, lineHeight: 1.7 }}>
-            15 jaar verbinding tussen Europese vaklieden en de Belgische bouwsector. Transparant, gedocumenteerd, betrouwbaar.
-          </p>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <span style={{
+              display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em',
+              textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999,
+              background: '#EFF6FF', color: '#2563EB', marginBottom: 16,
+            }}>Ons team</span>
+            <h2 style={{ fontSize: 'clamp(1.75rem,3vw,2.625rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.025em', color: '#0F172A', marginBottom: 12 }}>
+              De mensen achter HABICO
+            </h2>
+            <p style={{ fontSize: 15, color: '#64748B', maxWidth: 440, margin: '0 auto', lineHeight: 1.7 }}>
+              U belt iemand die u kent. Ons team is klein, direct en aanspreekbaar.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, maxWidth: 900, margin: '0 auto' }}>
+            {team.map(t => (
+              <div key={t.naam} style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '100%', aspectRatio: '1/1', borderRadius: 20, overflow: 'hidden',
+                  marginBottom: 16, background: '#E2E8F0',
+                }}>
+                  <img
+                    src={t.foto}
+                    alt={t.naam}
+                    style={{
+                      width: '100%', height: '100%', objectFit: 'cover',
+                      filter: 'grayscale(100%)',
+                      display: 'block',
+                    }}
+                    onError={e => {
+                      e.target.style.display = 'none'
+                      e.target.parentElement.style.background = '#0A1628'
+                      e.target.parentElement.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#7BC4E2;font-size:28px;font-weight:800">${t.naam.split(' ').map(n=>n[0]).join('')}</div>`
+                    }}
+                  />
+                </div>
+                <h3 style={{ fontWeight: 700, fontSize: 16, color: '#0F172A', marginBottom: 4 }}>{t.naam}</h3>
+                <p style={{ fontSize: 13, color: '#2563EB', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.06em' }}>{t.rol}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Missie */}
-      <section style={{ background: '#fff', padding: '96px 0' }}>
+      <section style={{ background: '#F8FAFC', borderTop: '1px solid #E2E8F0', padding: '96px 0' }}>
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             <div>
+              <span style={{
+                display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em',
+                textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999,
+                background: '#EFF6FF', color: '#2563EB', marginBottom: 16,
+              }}>Onze missie</span>
               <h2 style={{ fontSize: 'clamp(1.75rem,3vw,2.625rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.025em', color: '#0F172A', marginBottom: 20 }}>
                 Onze missie
               </h2>
@@ -48,27 +86,27 @@ export default function OverHabico() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {[
                   { getal: '15+', label: 'Jaar ervaring' },
-                  { getal: '200+', label: 'Plaatsingen' },
+                  { getal: '500+', label: 'Plaatsingen' },
                   { getal: '8', label: 'Landen' },
                   { getal: '6', label: 'Sectoren' },
                 ].map(s => (
-                  <div key={s.label} style={{ background: '#F8FAFC', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #E2E8F0' }}>
+                  <div key={s.label} style={{ background: '#fff', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #E2E8F0' }}>
                     <div style={{ fontSize: 28, fontWeight: 800, color: '#2563EB', marginBottom: 4 }}>{s.getal}</div>
                     <div style={{ fontSize: 13, color: '#64748B' }}>{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div style={{ background: '#F8FAFC', borderRadius: 20, padding: 28, border: '1px solid #E2E8F0' }}>
+            <div style={{ background: '#fff', borderRadius: 20, padding: 28, border: '1px solid #E2E8F0' }}>
               <h3 style={{ fontSize: 18, fontWeight: 700, color: '#0F172A', marginBottom: 16 }}>Bedrijfsgegevens</h3>
               <div style={{ marginBottom: 16 }}>
                 {[
-                  { label: 'Bedrijfsnaam', value: 'HABICO BV' },
-                  { label: 'BTW-nummer', value: 'BE 0810.889.415' },
-                  { label: 'KBO-nummer', value: '0000.000.000' },
-                  { label: 'Adres', value: 'Maasmechelen, België' },
-                  { label: 'Erkenning aannemer', value: 'Klasse D — Categorie D' },
-                  { label: 'Limosa-registratie', value: 'Gecertificeerde verwerker' },
+                  { label: 'Bedrijfsnaam',          value: 'HABICO BV' },
+                  { label: 'BTW-nummer',             value: 'BE 0810.889.415' },
+                  { label: 'KBO-nummer',             value: '0000.000.000' },
+                  { label: 'Adres',                  value: 'Maasmechelen, België' },
+                  { label: 'Erkenning aannemer',     value: 'Klasse D — Categorie D' },
+                  { label: 'Limosa-registratie',     value: 'Gecertificeerde verwerker' },
                 ].map(r => (
                   <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #E2E8F0', fontSize: 14 }}>
                     <span style={{ color: '#64748B' }}>{r.label}</span>
@@ -82,34 +120,6 @@ export default function OverHabico() {
                 <span style={{ background: '#FEF3C7', color: '#B45309', fontSize: 12, fontWeight: 600, padding: '5px 12px', borderRadius: 9999, border: '1px solid #FDE68A' }}>✓ VCA</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section style={{ background: '#EFF6FF', borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE', padding: '96px 0' }}>
-        <div className="wrap">
-          <h2 style={{ fontSize: 'clamp(1.75rem,3vw,2.625rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.025em', color: '#0F172A', marginBottom: 12, textAlign: 'center' }}>
-            Ons team
-          </h2>
-          <p style={{ fontSize: 15, color: '#64748B', textAlign: 'center', maxWidth: 440, margin: '0 auto 40px', lineHeight: 1.7 }}>
-            U belt iemand die u kent. Ons team is klein, direct en aanspreekbaar.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, maxWidth: 700, margin: '0 auto' }}>
-            {team.map(t => (
-              <div key={t.naam} className="card" style={{ padding: 28, textAlign: 'center' }}>
-                <div style={{
-                  width: 72, height: 72, borderRadius: '50%', background: '#0A1628',
-                  color: '#fff', fontSize: 22, fontWeight: 700,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  margin: '0 auto 16px',
-                }}>
-                  {t.initials}
-                </div>
-                <h3 style={{ fontWeight: 700, fontSize: 16, color: '#0F172A', marginBottom: 4 }}>{t.naam}</h3>
-                <p style={{ fontSize: 13, color: '#64748B' }}>{t.rol}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
