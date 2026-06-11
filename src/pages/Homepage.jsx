@@ -59,76 +59,81 @@ export default function Homepage() {
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="hero-mesh hero-section">
+      <section className="hero-mesh hero-section" style={{ display: 'flex', flexDirection: 'column' }}>
         {/* Blueprint grid */}
         <div className="hero-blueprint-grid" />
 
         {/* Blueprint SVG decorations */}
         <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} xmlns="http://www.w3.org/2000/svg">
-          {/* top-right crosshair */}
           <g stroke="rgba(100,180,255,0.18)" strokeWidth="1" fill="none">
             <line x1="88%" y1="12%" x2="92%" y2="12%" />
             <line x1="90%" y1="10%" x2="90%" y2="14%" />
             <circle cx="90%" cy="12%" r="12" strokeDasharray="3 4" />
           </g>
-          {/* bottom-right dimension bracket */}
           <g stroke="rgba(100,180,255,0.14)" strokeWidth="1" fill="none">
             <line x1="75%" y1="82%" x2="95%" y2="82%" />
             <line x1="75%" y1="80%" x2="75%" y2="84%" />
             <line x1="95%" y1="80%" x2="95%" y2="84%" />
           </g>
-          {/* top-left corner mark */}
           <g stroke="rgba(100,180,255,0.15)" strokeWidth="1" fill="none">
             <line x1="3%" y1="6%" x2="8%" y2="6%" />
             <line x1="3%" y1="6%" x2="3%" y2="16%" />
           </g>
-          {/* large circle arc — technical feel */}
           <circle cx="78%" cy="55%" r="140" stroke="rgba(100,180,255,0.07)" strokeWidth="1" fill="none" strokeDasharray="6 6" />
           <circle cx="78%" cy="55%" r="80" stroke="rgba(100,180,255,0.05)" strokeWidth="1" fill="none" />
         </svg>
-        <div className="wrap hero-inner" style={{ position: 'relative' }}>
-          <div style={{ maxWidth: 680 }}>
-            <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
-              <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
-              Gespecialiseerde vaklieden — snel inzetbaar
+
+        {/* Main hero content — grows to fill space */}
+        <div className="wrap hero-inner" style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center' }}>
+          <div className="hero-layout">
+            {/* Left: text */}
+            <div className="hero-text">
+              <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
+                <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
+                Vakkundige teams beschikbaar!
+              </div>
+              <h1 className="hero-h1">
+                Gespecialiseerde bouwploegen,{' '}
+                <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
+              </h1>
+              <p className="hero-lead">
+                HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
+              </p>
+              <div className="hero-cta-row">
+                <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
+                  Vraag uw ploeg aan →
+                </Link>
+              </div>
+              <div className="hero-badge-row">
+                {[
+                  { label: '15+ jaar ervaring',    e: '🏆' },
+                  { label: '500+ plaatsingen',      e: '👷' },
+                  { label: 'Juridisch conform',     e: '⚖️' },
+                  { label: 'Actief in heel Europa', e: '🌍' },
+                ].map(t => (
+                  <span key={t.label} className="trust-badge" style={{ fontSize: 13 }}>{t.e} {t.label}</span>
+                ))}
+              </div>
             </div>
-            <h1 className="hero-h1">
-              Gespecialiseerde bouwploegen,{' '}
-              <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
-            </h1>
-            <p className="hero-lead">
-              HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
-            </p>
-            <div className="hero-cta-row">
-              <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
-                Vraag uw ploeg aan →
-              </Link>
-            </div>
-            <div className="hero-badge-row">
-              {[
-                { label: '15+ jaar ervaring',   e: '🏆' },
-                { label: '500+ plaatsingen',     e: '👷' },
-                { label: 'Juridisch conform',    e: '⚖️' },
-                { label: 'Actief in heel Europa', e: '🌍' },
-              ].map(t => (
-                <span key={t.label} className="trust-badge" style={{ fontSize: 13 }}>{t.e} {t.label}</span>
-              ))}
+            {/* Right: image */}
+            <div className="hero-image-wrap">
+              <img
+                src="/hero-banner.png"
+                alt="HABICO bouwploeg"
+                className="hero-image"
+              />
             </div>
           </div>
         </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, #fff, transparent)' }} />
-      </section>
 
-
-      {/* ── KLANTEN LOGOBAR ──────────────────────────────────────────────── */}
-      <section style={{ background: '#fff', padding: '40px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
-        <div className="wrap">
-          <p style={{ textAlign: 'center', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#94A3B8', marginBottom: 28 }}>
-            Vertrouwd door
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '16px 40px' }}>
+        {/* Logobar — pinned at bottom, inside viewport */}
+        <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,.08)', background: 'rgba(0,0,0,.25)', backdropFilter: 'blur(4px)', padding: '14px 0' }}>
+          <div className="wrap" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px 32px', justifyContent: 'center' }}>
+            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)', flexShrink: 0 }}>
+              Vertrouwd door
+            </span>
             {klanten.map(k => (
-              <span key={k} style={{ fontSize: 18, fontWeight: 700, color: '#CBD5E1', letterSpacing: '-.02em' }}>{k}</span>
+              <span key={k} style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,.35)', letterSpacing: '-.01em' }}>{k}</span>
             ))}
           </div>
         </div>

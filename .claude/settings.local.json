@@ -33,7 +33,12 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(gh pr *)",
-      "Bash(brew list *)"
+      "Bash(brew list *)",
+      "Bash(open \"/Users/cedriccops/Website HABICO/logo-proposals.html\")",
+      "Bash(ls /tmp/*.jpg /tmp/*.png /tmp/*.jpeg 2>/dev/null | head -20 *)",
+      "Bash(sort -t/ -k1)",
+      "Bash(find /var/folders -name \"*.jpg\" -newer \"/Users/cedriccops/Website HABICO/package.json\" 2>/dev/null | head -10 *)",
+      "Bash(mkdir -p \"/Users/cedriccops/Website HABICO/.claude\" && cat \"/Users/cedriccops/Website HABICO/.claude/launch.json\" 2>/dev/null || echo \"NOTFOUND\")"
     ]
   }
 }
