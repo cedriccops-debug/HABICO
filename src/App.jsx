@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Homepage from './pages/Homepage'
+import Homepage2 from './pages/Homepage2'
 import Profielen from './pages/Profielen'
 import ProfielDetail from './pages/ProfielDetail'
 import HoeWerktHet from './pages/HoeWerktHet'
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/v2" element={<Homepage2 />} />
           <Route path="/profielen" element={<Profielen />} />
           <Route path="/profielen/:slug" element={<ProfielDetail />} />
           <Route path="/hoe-werkt-het" element={<HoeWerktHet />} />

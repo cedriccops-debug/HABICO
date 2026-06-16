@@ -38,7 +38,9 @@
       "Bash(ls /tmp/*.jpg /tmp/*.png /tmp/*.jpeg 2>/dev/null | head -20 *)",
       "Bash(sort -t/ -k1)",
       "Bash(find /var/folders -name \"*.jpg\" -newer \"/Users/cedriccops/Website HABICO/package.json\" 2>/dev/null | head -10 *)",
-      "Bash(mkdir -p \"/Users/cedriccops/Website HABICO/.claude\" && cat \"/Users/cedriccops/Website HABICO/.claude/launch.json\" 2>/dev/null || echo \"NOTFOUND\")"
+      "Bash(mkdir -p \"/Users/cedriccops/Website HABICO/.claude\" && cat \"/Users/cedriccops/Website HABICO/.claude/launch.json\" 2>/dev/null || echo \"NOTFOUND\")",
+      "mcp__visualize__read_me",
+      "Bash(find \"/Users/cedriccops\" -name \"Screenshot 2026-06-12*\" 2>/dev/null | head -10)"
     ]
   }
 }
