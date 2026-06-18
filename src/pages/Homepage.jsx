@@ -61,15 +61,15 @@ export default function Homepage() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="hero-section" style={{ display: 'flex', flexDirection: 'column', background: '#0d2745' }}>
 
-        {/* Team photo — absolute right half, full height, all workers visible */}
-        <div style={{ position: 'absolute', top: 0, right: 0, width: '65%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {/* Team photo — anchored bottom-right, fills hero vertically */}
+        <div style={{ position: 'absolute', bottom: 52, right: 0, width: '62%', overflow: 'hidden' }}>
           <img
             src="/Banner Hero/Screenshot 2026-06-12 at 16.58.34.png"
             alt="HABICO bouwploeg"
-            style={{ width: '100%', height: '90%', objectFit: 'contain', objectPosition: 'center center', display: 'block' }}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
           />
           {/* Left-edge fade — blends image's navy wall into page background */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0d2745 0%, rgba(13,39,69,0.3) 18%, transparent 35%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0d2745 0%, rgba(13,39,69,0.3) 20%, transparent 38%)', pointerEvents: 'none' }} />
         </div>
 
         {/* Main hero content — grows to fill space */}
