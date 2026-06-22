@@ -59,47 +59,55 @@ export default function Homepage() {
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="hero-section" style={{ display: 'flex', flexDirection: 'column', background: '#0d2745' }}>
+      <section style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', background: '#112a47', padding: '80px 0 0' }}>
 
-        {/* Team photo — anchored bottom-right, fills hero vertically */}
-        <div style={{ position: 'absolute', bottom: 52, right: 0, width: '62%', overflow: 'hidden' }}>
-          <img
-            src="/Banner Hero/Screenshot 2026-06-12 at 16.58.34.png"
-            alt="HABICO bouwploeg"
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
-          {/* Left-edge fade — blends image's navy wall into page background */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0d2745 0%, rgba(13,39,69,0.3) 20%, transparent 38%)', pointerEvents: 'none' }} />
-        </div>
-
-        {/* Main hero content — grows to fill space */}
-        <div className="wrap hero-inner" style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1 }}>
-          <div className="hero-text">
-            <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
-              <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
-              Vakkundige teams beschikbaar!
+        {/* Main hero content — two-column: text left, team right */}
+        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 0, width: '100%', boxSizing: 'border-box' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '30% 70%', gap: 48, alignItems: 'center', width: '100%' }}>
+            {/* Left: text */}
+            <div className="hero-text">
+              <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
+                <span className="pulse-dot" style={{ width: 8, height: 8, background: '#4ADE80', borderRadius: '50%' }} />
+                Vakkundige teams beschikbaar!
+              </div>
+              <h1 className="hero-h1">
+                Gespecialiseerde bouwploegen,{' '}
+                <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
+              </h1>
+              <p className="hero-lead">
+                HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
+              </p>
+              <div className="hero-cta-row">
+                <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
+                  Vraag uw ploeg aan →
+                </Link>
+              </div>
+              <div className="hero-badge-row">
+                {[
+                  { label: '15+ jaar ervaring',    e: '🏆' },
+                  { label: '500+ plaatsingen',      e: '👷' },
+                  { label: 'Juridisch conform',     e: '⚖️' },
+                  { label: 'Actief in heel Europa', e: '🌍' },
+                ].map(t => (
+                  <span key={t.label} className="trust-badge" style={{ fontSize: 13 }}>{t.e} {t.label}</span>
+                ))}
+              </div>
             </div>
-            <h1 className="hero-h1">
-              Gespecialiseerde bouwploegen,{' '}
-              <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
-            </h1>
-            <p className="hero-lead">
-              HABICO levert erkende vaklieden voor de Belgische bouwsector. HVAC, sloopwerken, lassen, elektriciteit — volledig gedocumenteerd, direct inzetbaar.
-            </p>
-            <div className="hero-cta-row">
-              <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>
-                Vraag uw ploeg aan →
-              </Link>
-            </div>
-            <div className="hero-badge-row">
-              {[
-                { label: '15+ jaar ervaring',    e: '🏆' },
-                { label: '500+ plaatsingen',      e: '👷' },
-                { label: 'Juridisch conform',     e: '⚖️' },
-                { label: 'Actief in heel Europa', e: '🌍' },
-              ].map(t => (
-                <span key={t.label} className="trust-badge" style={{ fontSize: 13 }}>{t.e} {t.label}</span>
-              ))}
+            {/* Right: team photo — edge gradients hide the image boundary */}
+            <div style={{ position: 'relative' }}>
+              <img
+                src="/Banner Hero/Screenshot 2026-06-12 at 16.58.34.png"
+                alt="HABICO bouwploeg"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+              {/* Left fade */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #112a47 0%, transparent 28%)', pointerEvents: 'none' }} />
+              {/* Top fade */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, #112a47 0%, transparent 22%)', pointerEvents: 'none' }} />
+              {/* Bottom fade */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #112a47 0%, transparent 22%)', pointerEvents: 'none' }} />
+              {/* Right fade */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to left, #112a47 0%, transparent 15%)', pointerEvents: 'none' }} />
             </div>
           </div>
         </div>
