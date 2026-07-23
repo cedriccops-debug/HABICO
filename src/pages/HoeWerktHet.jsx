@@ -16,9 +16,9 @@ const stappen = [
   },
   {
     nr: 3,
-    titel: 'Profiel match',
-    tekst: 'Wij selecteren de geschikte vaklieden uit ons netwerk van 8 landen en presenteren u 2-3 profielen.',
-    detail: 'Elk profiel wordt voorgesteld met competentiematrix, certificaten en beschikbaarheid. U kiest — geen verassingen op de werf.',
+    titel: 'Partner Match',
+    tekst: 'Wij zoeken de juiste ploeg beschikkend over de nodige vaardigheden om jouw projecten succesvol op te leveren.',
+    detail: 'We screenen elke partner grondig — zowel op de vakbekwaamheid van het team als op juridische compliance.',
   },
   {
     nr: 4,
@@ -46,12 +46,6 @@ const contractmodellen = [
     omschrijving: 'U huurt specifieke vaklieden in per dag/uur. Zij werken onder uw werfleiding.',
     voordelen: ['Volledige controle over uitvoering', 'Flexibel aanpasbaar', 'Transparant uurtarief'],
     gebruik: 'Ideaal als u al een eigen werfleider heeft en mensen wil aanvullen in drukke periodes.',
-  },
-  {
-    naam: 'Payrolling',
-    omschrijving: 'HABICO is formele werkgever, u bent economisch werkgever. De vakman werkt bij u maar is in dienst bij HABICO.',
-    voordelen: ['Minder administratie voor u', 'Snelle inzet', 'Sociaal zekerheid gedekt'],
-    gebruik: 'Ideaal voor langdurige samenwerking met vertrouwde vaklieden die u wil behouden maar niet vast wil aanwerven.',
   },
 ]
 
@@ -94,7 +88,7 @@ export default function HoeWerktHet() {
             Werkwijze
           </span>
           <h1 style={{ fontSize: 'clamp(2rem,4.5vw,3.75rem)', fontWeight: 900, lineHeight: 1.08, letterSpacing: '-.035em', color: '#fff', marginBottom: 16 }}>
-            Hoe werkt het?
+            Hoe het werkt
           </h1>
           <p style={{ fontSize: 18, color: '#94A3B8', maxWidth: 560, lineHeight: 1.7 }}>
             Van eerste contact tot uw ploeg op de werf — transparant, snel en administratief volledig ontzorgd.
@@ -170,7 +164,7 @@ export default function HoeWerktHet() {
           <p style={{ fontSize: 15, color: '#64748B', textAlign: 'center', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.7 }}>
             Eenvoudig uitgelegd — geen juridisch jargon. U kiest het model dat past bij uw project en risicoverdeling.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 20, maxWidth: 820, margin: '0 auto' }}>
             {contractmodellen.map(c => (
               <div key={c.naam} className="card" style={{ padding: 24 }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: '#0F172A', marginBottom: 12 }}>{c.naam}</h3>

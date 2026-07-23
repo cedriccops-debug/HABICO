@@ -1,21 +1,19 @@
 import { Link } from 'react-router-dom'
 import { profielen } from '../data/profielen'
 
-const klanten = ['Allco', 'LVE', 'Toplas', 'Groep Maes', 'Dethier', 'TechBuild']
-
 const usps = [
   { icon: '⚡', titel: 'Binnen 2 tot 4 weken op de werf', tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
-  { icon: '🔁', titel: '80% van onze klanten komt terug', tekst: 'Niet omdat we goedkoopst zijn, maar omdat we leveren wat we beloven.' },
-  { icon: '📋', titel: 'Papierwerk? Dat regelen wij',     tekst: 'Limosa, A1, RSZ, Dimona — alles in orde vóór dag één.' },
-  { icon: '🤝', titel: 'Eén vast aanspreekpunt',          tekst: 'Geen callcenter. Direct iemand die uw werf kent.' },
-  { icon: '✅', titel: 'Eerlijk over wat we leveren',     tekst: 'Competentiematrix per profiel — geen overselling, geen verrassingen.' },
-  { icon: '⚖️', titel: 'Juridisch volledig conform',     tekst: 'Loon- en arbeidsvoorwaarden, sociale dumping, aansprakelijkheid — allemaal geregeld.' },
+  { icon: '🔁', titel: 'Wij gaan voor langdurige samenwerking', tekst: 'En onze klanten werken jaren met ons samen, net omdat we consistent sterke ploegen aanleveren waar ze op kunnen rekenen.' },
+  { icon: '📋', titel: 'Papierwerk? Dat regelen wij',     tekst: 'Limosa, A1, RSZ, Dimona — wij volgen Europese wetgeving strict op en zorgen dat jullie geen risico lopen.' },
+  { icon: '🤝', titel: 'Eén vast aanspreekpunt',          tekst: 'Wij zijn geen callcenter. Voor ons team is samenwerking en service cruciaal. We werken liever goed samen met een handvol klanten, zo kunnen wij de beste samenwerking garanderen.' },
+  { icon: '✅', titel: 'Eerlijk over wat we leveren',     tekst: 'We zijn transparant over wat onze ploegen wel en niet kunnen, zo weten jullie wat jullie kunnen verwachten.' },
+  { icon: '⚖️', titel: 'Juridisch volledig conform',     tekst: 'Wij volgen nauwlettend Belgische en Europese wetgeving rond onderaannemerschap op, en zorgen dat wij en onze partners volledig juridisch conform zijn.' },
 ]
 
 const steps = [
   { nr: '01', titel: 'Contact',         tekst: 'Bel, mail of formulier — reactie binnen 24u.' },
   { nr: '02', titel: 'Analyse',          tekst: 'Korte intake: project, timing, vereiste profielen.' },
-  { nr: '03', titel: 'Profiel match',    tekst: '2–3 geverifieerde kandidaten gepresenteerd.' },
+  { nr: '03', titel: 'Partner Match',    tekst: 'Wij zoeken de juiste ploeg beschikkend over de nodige vaardigheden om jouw projecten succesvol op te leveren.' },
   { nr: '04', titel: 'Contract & admin', tekst: 'Limosa, A1 & Dimona geregeld. Klaar.' },
   { nr: '05', titel: 'Op de werf',       tekst: 'Uw ploeg staat er — wij blijven aanspreekpunt.' },
 ]
@@ -106,7 +104,7 @@ export default function Homepage2() {
               Vakkundige teams beschikbaar!
             </div>
             <h1 className="hero-h1">
-              Gespecialiseerde bouwploegen,{' '}
+              Ervaren bouwploegen,{' '}
               <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
             </h1>
             <p className="hero-lead">
@@ -119,7 +117,7 @@ export default function Homepage2() {
             </div>
             <div className="hero-badge-row">
               {[
-                { label: '15+ jaar ervaring',    e: '🏆' },
+                { label: '17+ jaar ervaring',    e: '🏆' },
                 { label: '500+ plaatsingen',      e: '👷' },
                 { label: 'Juridisch conform',     e: '⚖️' },
                 { label: 'Actief in heel Europa', e: '🌍' },
@@ -130,23 +128,13 @@ export default function Homepage2() {
           </div>
         </div>
 
-        {/* Logobar */}
-        <div style={{ position: 'relative', zIndex: 2, borderTop: '1px solid rgba(255,255,255,.08)', background: '#071829', padding: '14px 0' }}>
-          <div className="wrap" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px 32px', justifyContent: 'center' }}>
-            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)', flexShrink: 0 }}>
-              Vertrouwd door
-            </span>
-            {klanten.map(k => (
-              <span key={k} style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,.35)', letterSpacing: '-.01em' }}>{k}</span>
-            ))}
-          </div>
-        </div>
+        {/* Logobar — tijdelijk verborgen tot klant-logos beschikbaar zijn */}
       </section>
 
       {/* ── PROFIELEN GRID ───────────────────────────────────────────────── */}
       <section style={{ background: '#0A1628', padding: '96px 0' }}>
         <div className="wrap">
-          <SectionHeader chip="11 specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Klik op een profiel — eerlijke competentie-info, vakspecifieke kennis, directe CTA." light center />
+          <SectionHeader chip="11 specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Ontdek onze specialisaties. Elk team beschikt over ruime ervaring in zijn sector en is zorgvuldig geselecteerd op vakmanschap." light center />
           <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8 }} className="scrollbar-hide">
             {profielen.map(p => (
               <Link key={p.slug} to={`/profielen/${p.slug}`} style={{ position: 'relative', flexShrink: 0, width: 160, aspectRatio: '3/4', borderRadius: 16, overflow: 'hidden', display: 'block', textDecoration: 'none' }}>
@@ -178,7 +166,7 @@ export default function Homepage2() {
                 Gebouwd op vertrouwen. Bewezen door resultaten.
               </h2>
               <p style={{ fontSize: 15, color: '#64748B', lineHeight: 1.7, marginBottom: 28 }}>
-                Wij zijn geen uitzendbureau. HABICO is een gespecialiseerde detacheringspartner die de Belgische bouwsector van binnenuit kent.
+                Wij zijn geen uitzendbureau. HABICO is een gespecialiseerde detacheringspartner die de juiste ploegen voor jouw projecten vindt.
               </p>
               <Link to="/over-habico" className="btn-secondary" style={{ fontSize: 14 }}>Meer over HABICO →</Link>
             </div>
@@ -200,7 +188,7 @@ export default function Homepage2() {
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
             {[
-              { getal: '15+',  label: 'Jaar actief in detachering' },
+              { getal: '17+',  label: 'Jaar actief in detachering' },
               { getal: '500+', label: 'Succesvolle plaatsingen' },
               { getal: '8',    label: 'Europese partnerlanden' },
               { getal: '2–4',  label: 'Weken tot op de werf' },
@@ -289,20 +277,34 @@ export default function Homepage2() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
+      {/* ── FINAL CTA — Persoonlijk met Cedric ───────────────────────────── */}
       <section className="hero-mesh" style={{ padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: .05, backgroundImage: 'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
-        <div className="wrap" style={{ position: 'relative', textAlign: 'center' }}>
-          <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: 'rgba(123,196,226,.15)', color: '#7BC4E2', marginBottom: 20 }}>Direct starten</span>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', marginBottom: 16 }}>
-            Ploeg nodig voor uw volgende project?
-          </h2>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,.6)', maxWidth: 440, margin: '0 auto 40px' }}>
-            Bel ons of vul het formulier in — wij reageren binnen 24 uur.
-          </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:+3289714100" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>📞 +32 89 71 41 00</a>
-            <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>Stuur een bericht →</Link>
+        <div className="wrap" style={{ position: 'relative' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 260px) 1fr', gap: 48, alignItems: 'center', maxWidth: 900, margin: '0 auto' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', border: '4px solid rgba(123,196,226,.3)', boxShadow: '0 20px 60px rgba(0,0,0,.4)' }}>
+              <img
+                src="/team/Cedric.jpg"
+                alt="Cedric Cops — HABICO"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div>
+              <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: 'rgba(123,196,226,.15)', color: '#7BC4E2', marginBottom: 20 }}>Direct contact</span>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', marginBottom: 16, lineHeight: 1.1 }}>
+                Ploeg nodig voor uw volgende project?
+              </h2>
+              <p style={{ fontSize: 17, color: 'rgba(255,255,255,.75)', maxWidth: 480, marginBottom: 12, lineHeight: 1.6 }}>
+                Ik neem persoonlijk elke aanvraag op — geen callcenter, geen wachttijd. Bel of mail me direct.
+              </p>
+              <p style={{ fontSize: 14, color: '#7BC4E2', fontWeight: 600, marginBottom: 28, letterSpacing: '.02em' }}>
+                — Cedric Cops, Key Account HABICO
+              </p>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a href="tel:+3289714100" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>📞 +32 89 71 41 00</a>
+                <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>Stuur een bericht →</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { profielen } from '../data/profielen'
 
 const HABICO_STATS = [
-  { getal: '15+',  label: 'Jaar actief' },
+  { getal: '17+',  label: 'Jaar actief' },
   { getal: '500+', label: 'Plaatsingen' },
   { getal: '8',    label: 'Landen' },
   { getal: '100%', label: 'Limosa & A1 geregeld' },
@@ -144,7 +144,7 @@ export default function ProfielDetail() {
                 Vind de juiste versterking via HABICO
               </h2>
               <p style={{ fontSize: 15, color: '#64748B', lineHeight: 1.7, marginBottom: 28 }}>
-                Al 15 jaar brengt HABICO erkende Europese vaklieden samen met Belgische bouwbedrijven.
+                Al 17 jaar brengt HABICO erkende Europese vaklieden samen met Belgische bouwbedrijven.
               </p>
               <Link to="/contact" className="btn-primary" style={{ fontSize: 14 }}>
                 Vraag nu {profiel.meervoud.toLowerCase()} aan

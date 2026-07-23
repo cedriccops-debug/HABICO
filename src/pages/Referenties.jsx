@@ -151,7 +151,7 @@ export default function Referenties() {
             <h2 style={{ fontSize: 22, fontWeight: 800, color: '#fff', textAlign: 'center', marginBottom: 36 }}>HABICO in cijfers</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, textAlign: 'center' }}>
               {[
-                { getal: '15+', label: 'jaar ervaring' },
+                { getal: '17+', label: 'jaar ervaring' },
                 { getal: '200+', label: 'plaatsingen' },
                 { getal: '8', label: 'landen actief' },
                 { getal: '98%', label: 'tevreden opdrachtgevers' },

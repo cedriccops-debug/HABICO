@@ -85,7 +85,7 @@ export default function OverHabico() {
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {[
-                  { getal: '15+', label: 'Jaar ervaring' },
+                  { getal: '17+', label: 'Jaar ervaring' },
                   { getal: '500+', label: 'Plaatsingen' },
                   { getal: '8', label: 'Landen' },
                   { getal: '6', label: 'Sectoren' },
@@ -103,7 +103,6 @@ export default function OverHabico() {
                 {[
                   { label: 'Bedrijfsnaam',          value: 'HABICO BV' },
                   { label: 'BTW-nummer',             value: 'BE 0810.889.415' },
-                  { label: 'KBO-nummer',             value: '0000.000.000' },
                   { label: 'Adres',                  value: 'Maasmechelen, België' },
                   { label: 'Erkenning aannemer',     value: 'Klasse D — Categorie D' },
                   { label: 'Limosa-registratie',     value: 'Gecertificeerde verwerker' },
