@@ -10,12 +10,19 @@ const links = [
 ]
 
 const Logo = ({ light = false }) => (
-  <svg width="120" height="30" viewBox="0 0 120 30" fill="none">
-    <rect x="0"  y="3"  width="6" height="22" rx="1.5" fill="#7BC4E2"/>
-    <rect x="0"  y="12" width="19" height="5.5" rx="1.5" fill="#7BC4E2"/>
-    <rect x="13" y="3"  width="6" height="22" rx="1.5" fill="#7BC4E2"/>
-    <text x="24" y="22" fontFamily="Inter,system-ui,sans-serif" fontWeight="800" fontSize="18" letterSpacing="-0.5" fill={light ? '#ffffff' : '#0F172A'}>ABICO</text>
-  </svg>
+  <span style={{
+    fontFamily: 'Poppins, Inter, system-ui, sans-serif',
+    fontWeight: 700,
+    fontStyle: 'italic',
+    fontSize: 26,
+    letterSpacing: '-0.02em',
+    color: light ? '#ffffff' : '#1D4ED8',
+    lineHeight: 1,
+    display: 'inline-block',
+    textTransform: 'uppercase',
+  }}>
+    HABICO
+  </span>
 )
 
 export default function Navbar() {

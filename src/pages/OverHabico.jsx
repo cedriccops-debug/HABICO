@@ -1,9 +1,8 @@
 export default function OverHabico() {
   const team = [
-    { naam: 'Charles Cops',       rol: 'Zaakvoerder',  foto: '/team/Charles_square.jpg' },
-    { naam: 'Joanna Foltynska',   rol: 'Operations',   foto: '/team/Joanna_square.jpg'  },
-    { naam: 'Elisabeth Loyen',    rol: 'Key Account',  foto: '/team/1711020732588.jpeg' },
-    { naam: 'Cedric Cops',        rol: 'Key Account',  foto: '/team/Cedric.jpg'  },
+    { naam: 'Charles Cops',       rol: 'Zaakvoerder',                    foto: '/team/Charles_square.jpg' },
+    { naam: 'Joanna Foltynska',   rol: 'Operationeel & Administratie',   foto: '/team/Joanna_square.jpg'  },
+    { naam: 'Cedric Cops',        rol: 'Commercieel',                    foto: '/team/Cedric.jpg'  },
   ]
 
   const mijlpalen = [
@@ -34,7 +33,7 @@ export default function OverHabico() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, maxWidth: 900, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24, maxWidth: 720, margin: '0 auto' }}>
             {team.map(t => (
               <div key={t.naam} style={{ textAlign: 'center' }}>
                 <div style={{
@@ -78,7 +77,7 @@ export default function OverHabico() {
                 Onze missie
               </h2>
               <p style={{ fontSize: 15, color: '#64748B', lineHeight: 1.7, marginBottom: 16 }}>
-                HABICO verbindt erkende Europese vaklieden met Belgische bouwbedrijven die nood hebben aan gespecialiseerde ploegen. Wij doen dit met maximale transparantie: eerlijke competentiematrices, volledige administratieve correctheid en een directe communicatiestijl.
+                HABICO verbindt erkende Europese vaklieden met Belgische bouwbedrijven die nood hebben aan gespecialiseerde ploegen. Wij doen dit met maximale transparantie en volledige administratieve correctheid.
               </p>
               <p style={{ fontSize: 15, color: '#64748B', lineHeight: 1.7, marginBottom: 32 }}>
                 We geloven dat eerlijkheid over wat een profiel kan en niet kan leidt tot betere samenwerkingen. Geen valse beloften, geen verrassingen op de werf.
