@@ -7,7 +7,7 @@ const Logo = () => (
     fontStyle: 'italic',
     fontSize: 28,
     letterSpacing: '-0.02em',
-    color: '#1D4ED8',
+    color: '#ffffff',
     lineHeight: 1,
     display: 'inline-block',
     textTransform: 'uppercase',
