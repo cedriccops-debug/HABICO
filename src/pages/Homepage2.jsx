@@ -131,6 +131,71 @@ export default function Homepage2() {
         {/* Logobar — tijdelijk verborgen tot klant-logos beschikbaar zijn */}
       </section>
 
+      {/* ── CTA — Persoonlijk met Cedric ─────────────────────────────────── */}
+      <section className="hero-mesh" style={{ padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: .05, backgroundImage: 'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+        <div className="wrap" style={{ position: 'relative' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 260px) 1fr', gap: 48, alignItems: 'center', maxWidth: 900, margin: '0 auto' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', border: '4px solid rgba(123,196,226,.3)', boxShadow: '0 20px 60px rgba(0,0,0,.4)' }}>
+              <img
+                src="/team/Cedric.jpg"
+                alt="Cedric Cops — HABICO"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div>
+              <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: 'rgba(123,196,226,.15)', color: '#7BC4E2', marginBottom: 20 }}>Direct contact</span>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', marginBottom: 16, lineHeight: 1.1 }}>
+                Ploeg nodig voor uw volgende project?
+              </h2>
+              <p style={{ fontSize: 17, color: 'rgba(255,255,255,.75)', maxWidth: 480, marginBottom: 12, lineHeight: 1.6 }}>
+                Ik neem persoonlijk elke aanvraag op — geen callcenter, geen wachttijd. Bel of mail me direct.
+              </p>
+              <p style={{ fontSize: 14, color: '#7BC4E2', fontWeight: 600, marginBottom: 28, letterSpacing: '.02em' }}>
+                — Cedric Cops, Key Account HABICO
+              </p>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a href="tel:+3289714100" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>📞 +32 89 71 41 00</a>
+                <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>Stuur een bericht →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── REFERENTIES ──────────────────────────────────────────────────── */}
+      <section style={{ background: '#fff', padding: '96px 0' }}>
+        <div className="wrap">
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 48, flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: '#EFF6FF', color: '#2563EB', marginBottom: 12 }}>Referenties</span>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-.025em' }}>Wat onze klanten zeggen</h2>
+            </div>
+            <Link to="/referenties" className="btn-secondary" style={{ fontSize: 14, flexShrink: 0 }}>Alle referenties →</Link>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {testimonials.map(r => (
+              <div key={r.bedrijf} className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 18 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#2563EB', fontSize: 14, flexShrink: 0 }}>{r.bedrijf[0]}</div>
+                  <div>
+                    <p style={{ fontWeight: 600, fontSize: 14, color: '#0F172A' }}>{r.bedrijf}</p>
+                    <p style={{ fontSize: 12, color: '#94A3B8' }}>{r.naam}</p>
+                  </div>
+                  <div style={{ marginLeft: 'auto', display: 'flex', gap: 2 }}>
+                    {[...Array(5)].map((_, i) => <span key={i} style={{ color: '#FBBF24', fontSize: 12 }}>★</span>)}
+                  </div>
+                </div>
+                <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, fontStyle: 'italic', flex: 1 }}>"{r.quote}"</p>
+                <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: '#64748B', fontWeight: 500 }}>
+                  📊 {r.context}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── PROFIELEN GRID ───────────────────────────────────────────────── */}
       <section style={{ background: '#0A1628', padding: '96px 0' }}>
         <div className="wrap">
@@ -240,71 +305,6 @@ export default function Homepage2() {
                 ✓ {c.label}
               </span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── REFERENTIES ──────────────────────────────────────────────────── */}
-      <section style={{ background: '#fff', padding: '96px 0' }}>
-        <div className="wrap">
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 48, flexWrap: 'wrap', gap: 16 }}>
-            <div>
-              <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: '#EFF6FF', color: '#2563EB', marginBottom: 12 }}>Referenties</span>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-.025em' }}>Wat onze klanten zeggen</h2>
-            </div>
-            <Link to="/referenties" className="btn-secondary" style={{ fontSize: 14, flexShrink: 0 }}>Alle referenties →</Link>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            {testimonials.map(r => (
-              <div key={r.bedrijf} className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#2563EB', fontSize: 14, flexShrink: 0 }}>{r.bedrijf[0]}</div>
-                  <div>
-                    <p style={{ fontWeight: 600, fontSize: 14, color: '#0F172A' }}>{r.bedrijf}</p>
-                    <p style={{ fontSize: 12, color: '#94A3B8' }}>{r.naam}</p>
-                  </div>
-                  <div style={{ marginLeft: 'auto', display: 'flex', gap: 2 }}>
-                    {[...Array(5)].map((_, i) => <span key={i} style={{ color: '#FBBF24', fontSize: 12 }}>★</span>)}
-                  </div>
-                </div>
-                <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, fontStyle: 'italic', flex: 1 }}>"{r.quote}"</p>
-                <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: '#64748B', fontWeight: 500 }}>
-                  📊 {r.context}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FINAL CTA — Persoonlijk met Cedric ───────────────────────────── */}
-      <section className="hero-mesh" style={{ padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: .05, backgroundImage: 'linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
-        <div className="wrap" style={{ position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 260px) 1fr', gap: 48, alignItems: 'center', maxWidth: 900, margin: '0 auto' }}>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', border: '4px solid rgba(123,196,226,.3)', boxShadow: '0 20px 60px rgba(0,0,0,.4)' }}>
-              <img
-                src="/team/Cedric.jpg"
-                alt="Cedric Cops — HABICO"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-            <div>
-              <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '.09em', textTransform: 'uppercase', padding: '5px 14px', borderRadius: 9999, background: 'rgba(123,196,226,.15)', color: '#7BC4E2', marginBottom: 20 }}>Direct contact</span>
-              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 3.25rem)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', marginBottom: 16, lineHeight: 1.1 }}>
-                Ploeg nodig voor uw volgende project?
-              </h2>
-              <p style={{ fontSize: 17, color: 'rgba(255,255,255,.75)', maxWidth: 480, marginBottom: 12, lineHeight: 1.6 }}>
-                Ik neem persoonlijk elke aanvraag op — geen callcenter, geen wachttijd. Bel of mail me direct.
-              </p>
-              <p style={{ fontSize: 14, color: '#7BC4E2', fontWeight: 600, marginBottom: 28, letterSpacing: '.02em' }}>
-                — Cedric Cops, Key Account HABICO
-              </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <a href="tel:+3289714100" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>📞 +32 89 71 41 00</a>
-                <Link to="/contact" className="btn-primary" style={{ fontSize: 16, padding: '14px 28px' }}>Stuur een bericht →</Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
