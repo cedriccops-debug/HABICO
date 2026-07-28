@@ -58,7 +58,7 @@ export default function Homepage() {
       <section style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', background: '#112a47', padding: '80px 0 0' }}>
 
         {/* Main hero content — two-column: text left, team right */}
-        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 0, width: '100%', boxSizing: 'border-box' }}>
+        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 'max(48px, 6vw)', width: '100%', boxSizing: 'border-box' }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '45% 55%', gap: 48, alignItems: 'center', width: '100%' }}>
             {/* Left: text */}
             <div className="hero-text">

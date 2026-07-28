@@ -177,9 +177,14 @@ main  { flex: 1; }
 .profiel-kaart:hover { transform: translateY(-6px); }
 .carousel-nav button:not(:disabled):hover { filter: brightness(1.1); }
 
-@media (max-width: 640px) {
-  .profiel-track > .profiel-kaart { width: 160px !important; height: 250px !important; }
-  .profiel-track > .profiel-kaart img { height: 195px !important; }
+@media (max-width: 900px) {
+  .profiel-track > .profiel-kaart { width: 260px !important; height: 394px !important; }
+  .profiel-track > .profiel-kaart img { height: 308px !important; bottom: 78px !important; }
+}
+
+@media (max-width: 520px) {
+  .profiel-track > .profiel-kaart { width: 220px !important; height: 334px !important; }
+  .profiel-track > .profiel-kaart img { height: 260px !important; bottom: 66px !important; }
 }
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }

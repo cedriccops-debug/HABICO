@@ -79,7 +79,7 @@ export default function ProfielDetail() {
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', height: '100%', overflow: 'hidden' }}>
               <img
-                src={`/professions-cutout/${profiel.slug}.png`}
+                src={`/professions-cutout/${profiel.slug}-v2.png`}
                 alt={profiel.naam}
                 style={{
                   height: 500,

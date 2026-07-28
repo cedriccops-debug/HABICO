@@ -34,7 +34,7 @@ export default function ProfielCarousel() {
   const scroll = dir => {
     const el = trackRef.current
     if (!el) return
-    el.scrollBy({ left: dir * Math.max(220, el.clientWidth * 0.7), behavior: 'smooth' })
+    el.scrollBy({ left: dir * Math.max(324, el.clientWidth * 0.8), behavior: 'smooth' })
   }
 
   const pijl = (dir, uit) => ({
@@ -67,22 +67,22 @@ export default function ProfielCarousel() {
             to={`/profielen/${p.slug}`}
             className="profiel-kaart"
             style={{
-              position: 'relative', flexShrink: 0, width: 190, height: 290,
-              borderRadius: 16, overflow: 'hidden', display: 'block',
+              position: 'relative', flexShrink: 0, width: 310, height: 470,
+              borderRadius: 18, overflow: 'hidden', display: 'block',
               textDecoration: 'none', scrollSnapAlign: 'start',
               background: `linear-gradient(to top, ${p.kleur} 0%, ${p.kleur} 38%, ${p.kleur}59 70%, rgba(10,22,40,0) 100%)`,
             }}
           >
             <img
-              src={`/professions-cutout/${p.slug}.png`}
+              src={`/professions-cutout/${p.slug}-v2.png`}
               alt={p.naam}
               loading="lazy"
-              style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: 64, height: 225, width: 'auto', display: 'block' }}
+              style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: 92, height: 368, width: 'auto', display: 'block' }}
               onError={e => { e.target.style.display = 'none' }}
             />
-            <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 14 }}>
-              <p style={{ color: '#fff', fontWeight: 800, fontSize: 17, lineHeight: 1.2 }}>{p.naam}</p>
-              <p style={{ color: 'rgba(255,255,255,.78)', fontSize: 12, lineHeight: 1.4, marginTop: 3 }}>{p.tagline}</p>
+            <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 20 }}>
+              <p style={{ color: '#fff', fontWeight: 800, fontSize: 22, lineHeight: 1.2 }}>{p.naam}</p>
+              <p style={{ color: 'rgba(255,255,255,.78)', fontSize: 14, lineHeight: 1.45, marginTop: 4 }}>{p.tagline}</p>
             </div>
           </Link>
         ))}
