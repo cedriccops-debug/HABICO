@@ -61,7 +61,7 @@ export default function Homepage() {
 
         {/* Main hero content — two-column: text left, team right */}
         <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 0, width: '100%', boxSizing: 'border-box' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '30% 70%', gap: 48, alignItems: 'center', width: '100%' }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '45% 55%', gap: 48, alignItems: 'center', width: '100%' }}>
             {/* Left: text */}
             <div className="hero-text">
               <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
@@ -91,21 +91,16 @@ export default function Homepage() {
                 ))}
               </div>
             </div>
-            {/* Right: team photo — edge gradients hide the image boundary */}
-            <div style={{ position: 'relative' }}>
+            {/* Right: team photo — transparante PNG, dus geen randgradiënten nodig.
+                Enkel onderaan een fade zodat de bijgesneden onderkant zacht wegloopt. */}
+            <div className="hero-team">
               <img
-                src="/Banner Hero/Screenshot 2026-06-12 at 16.58.34.png"
-                alt="HABICO bouwploeg"
+                src="/Banner Hero/habico-team-hero.png"
+                alt="HABICO bouwploeg — schilder, metser, plaatser, schrijnwerker en elektricien"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
-              {/* Left fade */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #112a47 0%, transparent 28%)', pointerEvents: 'none' }} />
-              {/* Top fade */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, #112a47 0%, transparent 22%)', pointerEvents: 'none' }} />
               {/* Bottom fade */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #112a47 0%, transparent 22%)', pointerEvents: 'none' }} />
-              {/* Right fade */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to left, #112a47 0%, transparent 15%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #112a47 0%, transparent 14%)', pointerEvents: 'none' }} />
             </div>
           </div>
         </div>

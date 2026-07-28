@@ -218,6 +218,26 @@ main  { flex: 1; }
 
 .hero-text { max-width: 600px; }
 
+/* Hero-teamfoto: staat tegen de rechterrand en wordt nooit groter dan zijn
+   eigen resolutie (1376px), zodat hij op brede schermen niet wazig wordt. */
+.hero-team {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 1376px;
+}
+
+/* Tablet: twee kolommen blijven, tekst krijgt iets meer ruimte */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 48% 52% !important; gap: 32px !important; }
+}
+
+/* Mobiel: onder elkaar, foto gecentreerd onder de tekst */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .hero-team { justify-self: center; max-width: 520px; }
+}
+
 .hero-image-wrap {
   position: relative;
   border-radius: 20px;
