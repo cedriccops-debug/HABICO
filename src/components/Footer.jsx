@@ -64,7 +64,7 @@ export default function Footer() {
           <div style={{ gridColumn: 'span 2', minWidth: 200 }}>
             <Logo light size={34} />
             <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7, marginTop: 16, marginBottom: 20, maxWidth: 280 }}>
-              Ervaren bouwploegen, morgen beschikbaar. Al 17 jaar verbinding tussen Europese vaklieden en de Belgische bouwsector.
+              Ervaren bouwploegen, direct inzetbaar. Al 17 jaar verbinding tussen Europese vaklieden en de Belgische bouwsector.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {['Limosa', 'A1-attest', 'VCA', 'PC 124'].map(b => (
