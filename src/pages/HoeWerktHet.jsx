@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const stappen = [
@@ -49,35 +48,8 @@ const contractmodellen = [
   },
 ]
 
-const faq = [
-  {
-    vraag: 'Zijn de arbeiders verzekerd?',
-    antwoord: 'Ja. Alle gedetacheerde arbeiders zijn gedekt door een arbeidsongevallenverzekering. De polis is op aanvraag beschikbaar.',
-  },
-  {
-    vraag: 'Wie is aansprakelijk bij een werfincident?',
-    antwoord: 'Dit hangt af van het contractmodel. Bij een dienstencontract (arbeiders werken onder uw leiding) draagt u als opdrachtgever de operationele verantwoordelijkheid. Bij een aanneemovereenkomst is HABICO/partner aansprakelijk voor de uitvoering. Wij leggen dit altijd duidelijk vast in het contract.',
-  },
-  {
-    vraag: 'Wat bij ziekte van een arbeid',
-    antwoord: 'Wij brengen u zo snel mogelijk op de hoogte en zoeken waar mogelijk een vervanger. Afhankelijk van het contract geldt een garantietermijn.',
-  },
-  {
-    vraag: 'Wat is het minimumloon (PC 124)?',
-    antwoord: 'Alle arbeiders worden betaald conform het Belgische Paritair Comité 124 (bouwsector), inclusief vakantiegeld en eindejaarspremie. Dit is wettelijk verplicht voor gedetacheerde arbeiders in België.',
-  },
-  {
-    vraag: 'Wat regelt HABICO administratief?',
-    antwoord: 'Limosa-aangifte, A1-attest (sociale zekerheid), RSZ-registratie, Dimona, arbeidscontract conform Belgische wetgeving. U ontvangt alle documenten voor aanvang van de werken.',
-  },
-  {
-    vraag: 'Hoe snel kunnen we starten?',
-    antwoord: 'Bij directe beschikbaarheid starten we binnen 3-5 werkdagen (administratieve verwerkingstijd). In urgente gevallen proberen wij dit te versnellen.',
-  },
-]
 
 export default function HoeWerktHet() {
-  const [openFaq, setOpenFaq] = useState(null)
 
   return (
     <div>
@@ -185,39 +157,12 @@ export default function HoeWerktHet() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Afsluitende CTA */}
       <section style={{ background: '#fff', padding: '96px 0' }}>
         <div className="wrap">
-          <div style={{ maxWidth: 680, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 'clamp(1.75rem,3vw,2.625rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.025em', color: '#0F172A', marginBottom: 40, textAlign: 'center' }}>
-              Veelgestelde vragen
-            </h2>
-            <div>
-              {faq.map((f, i) => (
-                <div key={i} style={{ border: '1px solid #E2E8F0', borderRadius: 12, overflow: 'hidden', marginBottom: 10 }}>
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    style={{
-                      width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      padding: '18px 20px', textAlign: 'left', fontWeight: 600, fontSize: 15,
-                      color: '#0F172A', background: openFaq === i ? '#F8FAFC' : '#fff', border: 'none', cursor: 'pointer',
-                    }}
-                  >
-                    {f.vraag}
-                    <span style={{ color: '#2563EB', fontSize: 22, transform: openFaq === i ? 'rotate(45deg)' : 'none', transition: 'transform .2s', flexShrink: 0, marginLeft: 12 }}>+</span>
-                  </button>
-                  {openFaq === i && (
-                    <div style={{ padding: '0 20px 18px', fontSize: 14, color: '#64748B', lineHeight: 1.7, borderTop: '1px solid #F1F5F9', paddingTop: 14 }}>
-                      {f.antwoord}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div style={{ marginTop: 48, textAlign: 'center' }}>
-              <p style={{ fontSize: 15, color: '#64748B', marginBottom: 16 }}>Nog andere vragen?</p>
-              <Link to="/contact" className="btn-primary">Stel uw vraag</Link>
-            </div>
+          <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: 15, color: '#64748B', marginBottom: 16 }}>Nog andere vragen?</p>
+            <Link to="/contact" className="btn-primary">Stel uw vraag</Link>
           </div>
         </div>
       </section>

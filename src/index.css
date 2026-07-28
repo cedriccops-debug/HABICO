@@ -172,6 +172,16 @@ main  { flex: 1; }
 }
 
 /* ── Scrollbar hide ────────────────────────────────────────────────────────── */
+/* Profielen-carousel */
+.profiel-kaart { transition: transform .2s ease; }
+.profiel-kaart:hover { transform: translateY(-6px); }
+.carousel-nav button:not(:disabled):hover { filter: brightness(1.1); }
+
+@media (max-width: 640px) {
+  .profiel-track > .profiel-kaart { width: 160px !important; height: 250px !important; }
+  .profiel-track > .profiel-kaart img { height: 195px !important; }
+}
+
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 

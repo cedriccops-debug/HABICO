@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom'
-import { profielen } from '../data/profielen'
+import ProfielCarousel from '../components/ProfielCarousel'
 
 const usps = [
-  { icon: '⚡', titel: 'Binnen 2 tot 4 weken op de werf', tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
   { icon: '🔁', titel: 'Wij gaan voor langdurige samenwerking', tekst: 'En onze klanten werken jaren met ons samen, net omdat we consistent sterke ploegen aanleveren waar ze op kunnen rekenen.' },
   { icon: '📋', titel: 'Papierwerk? Dat regelen wij',     tekst: 'Limosa, A1, RSZ, Dimona — wij volgen Europese wetgeving strict op en zorgen dat jullie geen risico lopen.' },
-  { icon: '🤝', titel: 'Eén vast aanspreekpunt',          tekst: 'Wij zijn geen callcenter. Voor ons team is samenwerking en service cruciaal. We werken liever goed samen met een handvol klanten, zo kunnen wij de beste samenwerking garanderen.' },
-  { icon: '✅', titel: 'Eerlijk over wat we leveren',     tekst: 'We zijn transparant over wat onze ploegen wel en niet kunnen, zo weten jullie wat jullie kunnen verwachten.' },
   { icon: '⚖️', titel: 'Juridisch volledig conform',     tekst: 'Wij volgen nauwlettend Belgische en Europese wetgeving rond onderaannemerschap op, en zorgen dat wij en onze partners volledig juridisch conform zijn.' },
+  { icon: '⚡', titel: 'Binnen 1 tot 3 weken op de werf', tekst: 'U geeft de startdatum — wij zorgen dat de ploeg er staat.' },
 ]
 
 const steps = [
@@ -200,21 +198,7 @@ export default function Homepage2() {
       <section style={{ background: '#0A1628', padding: '96px 0' }}>
         <div className="wrap">
           <SectionHeader chip="11 specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Ontdek onze specialisaties. Elk team beschikt over ruime ervaring in zijn sector en is zorgvuldig geselecteerd op vakmanschap." light center />
-          <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8 }} className="scrollbar-hide">
-            {profielen.map(p => (
-              <Link key={p.slug} to={`/profielen/${p.slug}`} style={{ position: 'relative', flexShrink: 0, width: 160, aspectRatio: '3/4', borderRadius: 16, overflow: 'hidden', display: 'block', textDecoration: 'none' }}>
-                <img src={p.foto} alt={p.naam} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => e.target.style.display = 'none'} />
-                <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, ${p.kleur}F0 0%, ${p.kleur}88 45%, transparent 100%)` }} />
-                <div style={{ position: 'absolute', top: 10, left: 10 }}>
-                  <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.9)', background: 'rgba(0,0,0,.25)', padding: '3px 8px', borderRadius: 999, border: '1px solid rgba(255,255,255,.2)' }}>{p.naam}</span>
-                </div>
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 14 }}>
-                  <p style={{ color: '#fff', fontWeight: 800, fontSize: 14, lineHeight: 1.2 }}>{p.naam}</p>
-                  <p style={{ color: 'rgba(255,255,255,.7)', fontSize: 11, marginTop: 3 }}>{p.tagline}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ProfielCarousel />
           <div style={{ textAlign: 'center', marginTop: 32 }}>
             <Link to="/profielen" className="btn-ghost-white" style={{ fontSize: 14 }}>Alle 11 profielen →</Link>
           </div>
@@ -256,7 +240,7 @@ export default function Homepage2() {
               { getal: '17+',  label: 'Jaar actief in detachering' },
               { getal: '500+', label: 'Succesvolle plaatsingen' },
               { getal: '8',    label: 'Europese partnerlanden' },
-              { getal: '2–4',  label: 'Weken tot op de werf' },
+              { getal: '1–3',  label: 'Weken tot op de werf' },
             ].map(s => (
               <div key={s.label}>
                 <div style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, color: '#2563EB', letterSpacing: '-.04em' }}>{s.getal}</div>

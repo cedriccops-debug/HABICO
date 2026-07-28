@@ -31,18 +31,23 @@ export default function Profielen() {
               <Link
                 key={p.slug}
                 to={`/profielen/${p.slug}`}
-                style={{ display: 'block', position: 'relative', overflow: 'hidden', borderRadius: 16, aspectRatio: '3/4', textDecoration: 'none' }}
+                style={{
+                  display: 'block', position: 'relative', overflow: 'hidden', borderRadius: 16,
+                  aspectRatio: '3/4', textDecoration: 'none',
+                  background: `linear-gradient(to top, ${p.kleur} 0%, ${p.kleur} 38%, ${p.kleur}59 70%, ${p.kleur}1A 100%)`,
+                }}
               >
                 <img
                   src={p.foto}
                   alt={p.naam}
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                  loading="lazy"
+                  style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: '22%', height: '76%', width: 'auto', display: 'block' }}
                   onError={e => { e.target.style.display = 'none' }}
                 />
                 <div
                   style={{
                     position: 'absolute', inset: 0,
-                    background: `linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 45%, transparent 100%)`,
+                    background: `linear-gradient(to top, ${p.kleur}E6 0%, ${p.kleur}00 42%)`,
                   }}
                 />
                 {/* Label top */}

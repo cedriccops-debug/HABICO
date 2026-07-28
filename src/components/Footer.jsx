@@ -26,7 +26,6 @@ const profielLinks = [
 ]
 
 const nav = [
-  { to: '/beschikbare-ploegen', label: 'Beschikbare ploegen' },
   { to: '/hoe-werkt-het',       label: 'Hoe het werkt' },
   { to: '/word-partner',        label: 'Word partner' },
   { to: '/referenties',         label: 'Referenties' },

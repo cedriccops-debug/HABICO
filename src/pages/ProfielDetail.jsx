@@ -9,7 +9,7 @@ const HABICO_STATS = [
 ]
 
 const getVoordelen = (_pc) => [
-  { icon: '⚡', titel: 'Snel inzetbaar',             tekst: 'Binnen 2 tot 4 weken staat uw ploeg op de werf — volledig klaar voor de opdracht.' },
+  { icon: '⚡', titel: 'Snel inzetbaar',             tekst: 'Binnen 1 tot 3 weken staat uw ploeg op de werf — volledig klaar voor de opdracht.' },
   { icon: '🗣️', titel: 'Taalvaardig',               tekst: 'Minimaal één persoon per ploeg spreekt Nederlands of Engels.' },
   { icon: '💶', titel: 'Geen onnodige kosten',        tekst: 'Geen werving, selectie, opleiding of ontslag. U betaalt gepresteerde dagen.' },
   { icon: '📋', titel: 'Administratief ontzorgd',    tekst: 'Limosa, A1, RSZ & Dimona — allemaal in orde vóór dag één.' },
@@ -82,12 +82,11 @@ export default function ProfielDetail() {
                 src={`/professions-cutout/${profiel.slug}.png`}
                 alt={profiel.naam}
                 style={{
-                  height: profiel.slug === 'metser' ? 680 : 500,
+                  height: 500,
                   width: 'auto',
                   objectFit: 'contain',
                   objectPosition: 'bottom',
                   display: 'block',
-                  marginBottom: profiel.slug === 'metser' ? -220 : 0,
                 }}
                 onError={e => e.target.style.display = 'none'}
               />
@@ -177,6 +176,15 @@ export default function ProfielDetail() {
               <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginBottom: 24 }}>
                 Arbeidsdetachering zoals het hoort: volledig conform de Belgische arbeids- en loonvoorwaarden. Alle vereiste documenten ontvangt u vóór de opstart.
               </p>
+              {/* Paritair comité — met nuance, want het definitieve PC volgt uit
+                  de hoofdactiviteit van de opdrachtgever, niet uit het beroep. */}
+              <div style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 14, padding: 20, marginBottom: 24 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
+                  <span style={{ fontSize: 20, fontWeight: 800, color: profiel.kleur, letterSpacing: '-.02em' }}>PC {profiel.pc}</span>
+                  <span style={{ fontSize: 13, color: '#CBD5E1', fontWeight: 600 }}>{profiel.pcLabel}</span>
+                </div>
+                <p style={{ fontSize: 12.5, color: '#94A3B8', lineHeight: 1.6 }}>{profiel.pcToelichting}</p>
+              </div>
               <Link to="/hoe-werkt-het" style={{ fontSize: 14, fontWeight: 600, color: profiel.kleur, textDecoration: 'none' }}>
                 Meer over werkwijze & contractmodellen →
               </Link>
@@ -253,9 +261,9 @@ export default function ProfielDetail() {
           <h2 style={{ fontSize: 'clamp(1.375rem, 2vw, 1.875rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-.025em', marginBottom: 28 }}>Andere profielen</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {andere.map(p => (
-              <Link key={p.slug} to={`/profielen/${p.slug}`} style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', height: 200, display: 'block', textDecoration: 'none' }}>
-                <img src={p.foto} alt={p.naam} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => e.target.style.display = 'none'} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)' }} />
+              <Link key={p.slug} to={`/profielen/${p.slug}`} style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', height: 240, display: 'block', textDecoration: 'none', background: `linear-gradient(to top, ${p.kleur} 0%, ${p.kleur} 38%, ${p.kleur}59 70%, ${p.kleur}1A 100%)` }}>
+                <img src={p.foto} alt={p.naam} loading="lazy" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: 58, height: 180, width: 'auto', display: 'block' }} onError={e => e.target.style.display = 'none'} />
+                <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, ${p.kleur}E6 0%, ${p.kleur}00 40%)` }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 16 }}>
                   <p style={{ color: '#fff', fontWeight: 800, fontSize: 16 }}>{p.naam}</p>
                   <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 12, marginTop: 3 }}>{p.tagline}</p>
