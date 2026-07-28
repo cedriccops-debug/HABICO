@@ -88,7 +88,7 @@ export default function Profielen() {
             {[
               { icon: '📋', titel: 'Limosa & A1', tekst: 'Alle buitenlandse werknemers zijn correct gemeld. Geen risico op boetes of werfstop.' },
               { icon: '🛡️', titel: 'VCA gecertificeerd', tekst: 'Elk profiel beschikt over de vereiste veiligheidsattesten voor uw specifieke werf.' },
-              { icon: '⚡', titel: 'Binnen 3–5 dagen', tekst: 'Van aanvraag tot vakman op de werf — gemiddeld 3 tot 5 werkdagen.' },
+              { icon: '⚡', titel: 'Binnen 1–3 weken', tekst: 'Van aanvraag tot vakman op de werf — gemiddeld 1 tot 3 weken.' },
             ].map(b => (
               <div key={b.titel} style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 16, padding: 24 }}>
                 <div style={{ fontSize: 32, marginBottom: 12 }}>{b.icon}</div>
