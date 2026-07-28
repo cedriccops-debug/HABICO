@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import Watermerk from '../components/Watermerk'
 import { profielen } from '../data/profielen'
 
 const HABICO_STATS = [
@@ -165,8 +166,9 @@ export default function ProfielDetail() {
       </section>
 
       {/* ── COMPLIANCE ───────────────────────────────────────────────────── */}
-      <section style={{ background: '#0A1628', padding: '96px 0' }}>
-        <div className="wrap">
+      <section style={{ background: '#0A1628', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
+        <Watermerk kant="links" />
+        <div className="wrap" style={{ position: 'relative' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             <div>
               <Chip light>Wetgeving</Chip>

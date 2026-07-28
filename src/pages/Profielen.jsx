@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
+import Watermerk from '../components/Watermerk'
 import { profielen } from '../data/profielen'
 
 export default function Profielen() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: '#0A1628', padding: '96px 0' }}>
-        <div className="wrap" style={{ textAlign: 'center' }}>
+      <section style={{ background: '#0A1628', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
+        <Watermerk kant="rechts" />
+        <div className="wrap" style={{ textAlign: 'center', position: 'relative' }}>
           <span className="label-chip" style={{ background: 'rgba(37,99,235,.15)', color: '#93C5FD', marginBottom: 20 }}>
             Onze profielen
           </span>

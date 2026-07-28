@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Watermerk from '../components/Watermerk'
 import ProfielCarousel from '../components/ProfielCarousel'
 
 const usps = [
@@ -57,13 +58,10 @@ export default function Homepage() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', background: '#112a47', padding: '80px 0 0' }}>
 
-        {/* Watermerk — groot woordmerk op lage dekking, vult de donkere ruimte
-            achter de tekst. Puur decoratief, dus onzichtbaar voor screenreaders. */}
-        <div aria-hidden="true" className="hero-watermerk">HABICO</div>
-
-        {/* Main hero content — two-column: text left, team right */}
-        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 'max(48px, 6vw)', width: '100%', boxSizing: 'border-box' }}>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '45% 55%', gap: 48, alignItems: 'center', width: '100%' }}>
+        {/* Main hero content — two-column: text left, team right.
+            Geen paddingBottom: de ploeg moet de onderrand van de sectie raken. */}
+        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'flex-end', zIndex: 1, paddingLeft: 'max(48px, 6vw)', paddingRight: 'max(48px, 6vw)', width: '100%', boxSizing: 'border-box' }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '45% 55%', gap: 48, alignItems: 'end', width: '100%' }}>
             {/* Left: text */}
             <div className="hero-text">
               <div className="trust-badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
@@ -93,16 +91,14 @@ export default function Homepage() {
                 ))}
               </div>
             </div>
-            {/* Right: team photo — transparante PNG, dus geen randgradiënten nodig.
-                Enkel onderaan een fade zodat de bijgesneden onderkant zacht wegloopt. */}
+            {/* Right: team photo — transparante PNG die tot op de onderrand van
+                de sectie loopt, zonder fade. */}
             <div className="hero-team">
               <img
                 src="/Banner Hero/habico-team-hero.png"
                 alt="HABICO bouwploeg — schilder, metser, plaatser, schrijnwerker en elektricien"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
-              {/* Bottom fade */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #112a47 0%, transparent 14%)', pointerEvents: 'none' }} />
             </div>
           </div>
         </div>
@@ -178,8 +174,9 @@ export default function Homepage() {
       </section>
 
       {/* ── PROFIELEN GRID ───────────────────────────────────────────────── */}
-      <section style={{ background: '#0A1628', padding: '96px 0' }}>
-        <div className="wrap">
+      <section style={{ background: '#0A1628', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
+        <Watermerk kant="rechts" />
+        <div className="wrap" style={{ position: 'relative' }}>
           <SectionHeader chip="11 specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Ontdek onze specialisaties. Elk team beschikt over ruime ervaring in zijn sector en is zorgvuldig geselecteerd op vakmanschap." light center />
           <ProfielCarousel />
           <div style={{ textAlign: 'center', marginTop: 32 }}>

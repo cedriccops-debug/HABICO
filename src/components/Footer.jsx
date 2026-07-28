@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Watermerk from './Watermerk'
 import Logo from './Logo'
 
 const profielLinks = [
@@ -20,10 +21,11 @@ const nav = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#0A1628', color: '#fff' }}>
+    <footer style={{ background: '#0A1628', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+      <Watermerk kant="rechts" dekking={0.03} />
 
       {/* CTA band — Persoonlijk met Cedric */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,.1)' }}>
+      <div style={{ borderBottom: '1px solid rgba(255,255,255,.1)', position: 'relative' }}>
         <div className="wrap" style={{ paddingTop: 56, paddingBottom: 56, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 32 }}>
           <img
             src="/team/Cedric.jpg"
