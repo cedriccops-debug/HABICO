@@ -1,20 +1,5 @@
 import { Link } from 'react-router-dom'
-
-const Logo = () => (
-  <span style={{
-    fontFamily: 'Poppins, Inter, system-ui, sans-serif',
-    fontWeight: 700,
-    fontStyle: 'italic',
-    fontSize: 28,
-    letterSpacing: '-0.02em',
-    color: '#ffffff',
-    lineHeight: 1,
-    display: 'inline-block',
-    textTransform: 'uppercase',
-  }}>
-    HABICO
-  </span>
-)
+import Logo from './Logo'
 
 const profielLinks = [
   { slug: 'metser',      naam: 'Metsers' },
@@ -75,7 +60,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div style={{ gridColumn: 'span 2', minWidth: 200 }}>
-            <Logo />
+            <Logo light size={34} />
             <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7, marginTop: 16, marginBottom: 20, maxWidth: 280 }}>
               Ervaren bouwploegen, morgen beschikbaar. Al 17 jaar verbinding tussen Europese vaklieden en de Belgische bouwsector.
             </p>

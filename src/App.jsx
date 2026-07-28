@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Homepage from './pages/Homepage'
 import Homepage2 from './pages/Homepage2'
 import Profielen from './pages/Profielen'
@@ -15,6 +16,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>

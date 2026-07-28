@@ -57,6 +57,10 @@ export default function Homepage() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', background: '#112a47', padding: '80px 0 0' }}>
 
+        {/* Watermerk — groot woordmerk op lage dekking, vult de donkere ruimte
+            achter de tekst. Puur decoratief, dus onzichtbaar voor screenreaders. */}
+        <div aria-hidden="true" className="hero-watermerk">HABICO</div>
+
         {/* Main hero content — two-column: text left, team right */}
         <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', zIndex: 1, paddingBottom: 40, paddingLeft: 'max(48px, 6vw)', paddingRight: 'max(48px, 6vw)', width: '100%', boxSizing: 'border-box' }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '45% 55%', gap: 48, alignItems: 'center', width: '100%' }}>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import Logo from './Logo'
 
 const links = [
   { to: '/profielen',           label: 'Profielen' },
@@ -8,22 +9,6 @@ const links = [
   { to: '/word-partner',        label: 'Word partner' },
   { to: '/over-habico',         label: 'Over ons' },
 ]
-
-const Logo = ({ light = false }) => (
-  <span style={{
-    fontFamily: 'Poppins, Inter, system-ui, sans-serif',
-    fontWeight: 700,
-    fontStyle: 'italic',
-    fontSize: 26,
-    letterSpacing: '-0.02em',
-    color: light ? '#ffffff' : '#1D4ED8',
-    lineHeight: 1,
-    display: 'inline-block',
-    textTransform: 'uppercase',
-  }}>
-    HABICO
-  </span>
-)
 
 export default function Navbar() {
   const [open,    setOpen]    = useState(false)

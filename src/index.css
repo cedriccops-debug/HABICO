@@ -172,6 +172,29 @@ main  { flex: 1; }
 }
 
 /* ── Scrollbar hide ────────────────────────────────────────────────────────── */
+/* Hero-watermerk */
+.hero-watermerk {
+  position: absolute;
+  left: -0.06em;
+  bottom: -0.22em;
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: clamp(7rem, 19vw, 20rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .hero-watermerk { display: none; }
+}
+
 /* Profielen-carousel */
 .profiel-kaart { transition: transform .2s ease; }
 .profiel-kaart:hover { transform: translateY(-6px); }
