@@ -3,7 +3,7 @@ import { sectoren } from '../data/sectoren'
 
 const cases = [
   {
-    bedrijf: 'Allco NV',
+    bedrijf: 'Vandenberghe Bouw NV',
     sector: 'hvac',
     quote: 'HABICO leverde 3 HVAC-monteurs die naadloos inpasten in ons team. Limosa en A1 waren op dag 1 in orde — geen enkele vertraging op de werf.',
     context: '3 HVAC-monteurs • 18 maanden • 40+ wooneenheden',
@@ -12,7 +12,7 @@ const cases = [
     jaar: '2023',
   },
   {
-    bedrijf: 'LVE Construct',
+    bedrijf: 'Deconinck Sloopwerken',
     sector: 'sloopwerken',
     quote: 'We hadden ploegen nodig voor een groot sloopproject in Antwerpen. HABICO reageerde binnen een dag en binnen de week stonden de mensen op de werf.',
     context: '2 sloopploegen (6 man) • 6 maanden • industrieel complex',
@@ -21,7 +21,7 @@ const cases = [
     jaar: '2024',
   },
   {
-    bedrijf: 'Toplas Bouw',
+    bedrijf: 'Verhoeven Staalbouw',
     sector: 'laswerken',
     quote: 'TIG-lassers van HABICO — gecertificeerd, nauwkeurig en zelfstandig werkend. Precies wat wij nodig hadden voor ons roestvrijstalen project.',
     context: '2 TIG-lassers • 3 maanden • roestvrijstalen installaties',
@@ -30,7 +30,7 @@ const cases = [
     jaar: '2023',
   },
   {
-    bedrijf: 'Groep Maes',
+    bedrijf: 'Groep Vandersmissen',
     sector: 'elektriciteit',
     quote: 'Vijf elektriciens ingezet voor een groot appartementsproject. Vlekkeloos: VCA, Dimona, alles geregeld. Wij deden wat wij moesten doen: bouwen.',
     context: '5 elektriciens • 9 maanden • 120 appartementen',
@@ -39,7 +39,7 @@ const cases = [
     jaar: '2024',
   },
   {
-    bedrijf: 'TechBuild Solutions',
+    bedrijf: 'Prefabrix Constructies',
     sector: 'beton',
     quote: 'HABICO begreep exact wat wij zochten: bekistingswerkers met ervaring in prefab. Gevonden binnen 2 weken, sterk profiel, geen verrassingen.',
     context: '3 bekistingswerkers • 4 maanden • prefab-montage',
@@ -48,7 +48,7 @@ const cases = [
     jaar: '2023',
   },
   {
-    bedrijf: 'Renovatiegroep Noord',
+    bedrijf: 'Renoflex Vlaanderen',
     sector: 'dakwerken',
     quote: 'Uitstekende dakwerkers voor een renovatieproject van 60 woningen. Werk op hoogte attest aanwezig, geen incidenten, perfecte oplevering.',
     context: '2 dakwerkers • 5 maanden • 60 woningrenovaties',

@@ -18,9 +18,9 @@ const steps = [
 ]
 
 const testimonials = [
-  { bedrijf: 'Allco NV',      naam: 'Koen V.',  quote: 'HABICO leverde 3 HVAC-monteurs die naadloos inpasten in ons team. Limosa en A1 waren op dag 1 in orde.', context: '3 HVAC-monteurs · 18 maanden · 40+ wooneenheden' },
-  { bedrijf: 'LVE Construct', naam: 'Lars D.',  quote: 'HABICO reageerde binnen een dag en binnen de week stonden de mensen op de werf. Uitstekende service.', context: '2 sloopploegen · 6 maanden · industrieel complex' },
-  { bedrijf: 'Toplas Bouw',   naam: 'Petra M.', quote: 'TIG-lassers van HABICO — gecertificeerd, nauwkeurig en zelfstandig werkend. Precies wat wij nodig hadden.', context: '2 TIG-lassers · 3 maanden · roestvrij staal' },
+  { bedrijf: 'Vandenberghe Bouw NV',      naam: 'Koen V.',  quote: 'HABICO leverde 3 HVAC-monteurs die naadloos inpasten in ons team. Limosa en A1 waren op dag 1 in orde.', context: '3 HVAC-monteurs · 18 maanden · 40+ wooneenheden' },
+  { bedrijf: 'Deconinck Sloopwerken', naam: 'Lars D.',  quote: 'HABICO reageerde binnen een dag en binnen de week stonden de mensen op de werf. Uitstekende service.', context: '2 sloopploegen · 6 maanden · industrieel complex' },
+  { bedrijf: 'Verhoeven Staalbouw',   naam: 'Petra M.', quote: 'TIG-lassers van HABICO — gecertificeerd, nauwkeurig en zelfstandig werkend. Precies wat wij nodig hadden.', context: '2 TIG-lassers · 3 maanden · roestvrij staal' },
 ]
 
 /* ── Shared section header (centred) ──────────────────────────────────────── */
@@ -129,7 +129,7 @@ export default function Homepage() {
                 Ik neem persoonlijk elke aanvraag op — geen callcenter, geen wachttijd. Bel of mail me direct.
               </p>
               <p style={{ fontSize: 14, color: '#7BC4E2', fontWeight: 600, marginBottom: 28, letterSpacing: '.02em' }}>
-                — Cedric Cops, Key Account HABICO
+                — Cedric Cops, Commercieel HABICO
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <a href="tel:+3289714100" className="btn-ghost-white" style={{ fontSize: 16, padding: '14px 28px' }}>📞 +32 89 71 41 00</a>

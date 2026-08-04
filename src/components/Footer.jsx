@@ -46,7 +46,7 @@ export default function Footer() {
               Ik neem persoonlijk elke aanvraag op — geen callcenter, geen wachttijd. Bel of mail me direct.
             </p>
             <p style={{ fontSize: 13, color: '#7BC4E2', fontWeight: 600 }}>
-              — Cedric Cops, Key Account HABICO
+              — Cedric Cops, Commercieel HABICO
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
