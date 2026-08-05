@@ -29,7 +29,7 @@ const stappen = [
   {
     nr: 5,
     titel: 'Werf',
-    tekst: 'Uw ploeg staat klaar. Wij blijven aanspreekpunt tijdens het project voor alles wat administratief of operationeel misloopt.',
+    tekst: 'Uw ploeg staat klaar. Wij blijven het aanspreekpunt tijdens het project voor alles administratief en operationeel.',
     detail: 'Bij ziekte, verlenging of bijkomende profielen — één telefoontje volstaat.',
   },
 ]
