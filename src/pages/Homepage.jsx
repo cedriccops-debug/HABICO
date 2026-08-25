@@ -112,7 +112,7 @@ export default function Homepage() {
         <div className="wrap" style={{ position: 'relative' }}>
           <div className="cta-photo-grid">
             {/* Cedric photo */}
-            <div className="cta-photo" style={{ position: 'relative', width: '100%', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', border: '4px solid rgba(123,196,226,.3)', boxShadow: '0 20px 60px rgba(0,0,0,.4)' }}>
+            <div className="cta-photo" style={{ position: 'relative', aspectRatio: '1/1', borderRadius: '50%', overflow: 'hidden', border: '4px solid rgba(123,196,226,.3)', boxShadow: '0 20px 60px rgba(0,0,0,.4)' }}>
               <img
                 src="/team/Cedric.jpg"
                 alt="Cedric Cops — HABICO"
