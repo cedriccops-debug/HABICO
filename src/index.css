@@ -20,7 +20,7 @@
 /* ── Reset & base ──────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -30,6 +30,8 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 #root { min-height: 100vh; display: flex; flex-direction: column; }
@@ -387,6 +389,27 @@ main  { flex: 1; }
     linear-gradient(90deg, rgba(100,180,255,.05) 1px, transparent 1px);
   background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
   pointer-events: none;
+}
+
+/* ── CTA — persoonlijke foto naast tekst ──────────────────────────────────── */
+.cta-photo-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .cta-photo-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .cta-photo-grid .cta-photo {
+    width: 140px;
+  }
 }
 
 /* ── Divider line ──────────────────────────────────────────────────────────── */
