@@ -6,13 +6,13 @@ const inputBase = {
   color: '#0F172A',
 }
 
-// Aanvragen via het formulier worden naar deze adressen gemaild (eerste = hoofdontvanger, rest in CC).
-const ONTVANGERS = ['info@habico.be', 'cedric.cops@habico.be']
+// Aanvragen via het formulier worden naar dit adres gemaild.
+const ONTVANGER = 'cedric.cops@habico.be'
 
 export default function Contact() {
   const [form, setForm] = useState({
     naam: '', bedrijf: '', email: '', tel: '',
-    sector: '', startdatum: '', bericht: '',
+    bericht: '',
   })
   const [verzonden, setVerzonden] = useState(false)
   const [bezig, setBezig] = useState(false)
@@ -26,20 +26,17 @@ export default function Contact() {
     setBezig(true)
     setFout(false)
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${ONTVANGERS[0]}`, {
+      const res = await fetch(`https://formsubmit.co/ajax/${ONTVANGER}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           _subject: `Ploegaanvraag via website — ${form.naam} (${form.bedrijf})`,
-          _cc: ONTVANGERS.slice(1).join(','),
           _template: 'table',
           _captcha: 'false',
           Naam: form.naam,
           Bedrijf: form.bedrijf,
           email: form.email,
           Telefoon: form.tel,
-          Sector: form.sector || '—',
-          Startdatum: form.startdatum || '—',
           Bericht: form.bericht,
         }),
       })
@@ -168,26 +165,11 @@ export default function Contact() {
                       <input name="tel" value={form.tel} onChange={update} type="tel" required style={inputBase} />
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Sector / Profiel</label>
-                      <select name="sector" value={form.sector} onChange={update} style={inputBase}>
-                        <option value="">Selecteer sector</option>
-                        {['HVAC', 'Sloopwerken', 'Laswerken', 'Grondwerken', 'Elektriciteit', 'Dakwerken', 'Beton', 'Schilderwerken', 'Andere'].map(s => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Wanneer heeft u personeel nodig?</label>
-                      <input name="startdatum" value={form.startdatum} onChange={update} type="date" style={inputBase} />
-                    </div>
-                  </div>
                   <div style={{ marginBottom: 24 }}>
                     <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Bericht *</label>
                     <textarea
                       name="bericht" value={form.bericht} onChange={update} required rows={5}
-                      placeholder="Beschrijf uw project, hoeveel mensen u nodig heeft en voor welke regio..."
+                      placeholder="Laat ons weten wat u nodig heeft en tegen wanneer, en wij nemen zo snel mogelijk contact met je op."
                       style={{ ...inputBase, resize: 'none', lineHeight: 1.6 }}
                     />
                   </div>

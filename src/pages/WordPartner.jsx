@@ -1,4 +1,4 @@
-const PARTNER_EMAIL = 'info@habico.be'
+const PARTNER_EMAIL = 'cedric.cops@habico.be'
 const mailtoPartner = `mailto:${PARTNER_EMAIL}?subject=${encodeURIComponent('Partner worden — kennismaking')}`
 
 const criteria = [
