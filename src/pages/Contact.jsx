@@ -6,24 +6,51 @@ const inputBase = {
   color: '#0F172A',
 }
 
+// Aanvragen via het formulier worden naar deze adressen gemaild (eerste = hoofdontvanger, rest in CC).
+const ONTVANGERS = ['info@habico.be', 'cedric.cops@habico.be']
+
 export default function Contact() {
-  const [type, setType] = useState('klant')
   const [form, setForm] = useState({
     naam: '', bedrijf: '', email: '', tel: '',
     sector: '', startdatum: '', bericht: '',
   })
   const [verzonden, setVerzonden] = useState(false)
+  const [bezig, setBezig] = useState(false)
+  const [fout, setFout] = useState(false)
 
   const update = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Contactaanvraag via website — ${form.naam} (${form.bedrijf})`)
-    const body = encodeURIComponent(
-      `Naam: ${form.naam}\nBedrijf: ${form.bedrijf}\nE-mail: ${form.email}\nTelefoon: ${form.tel}\nSector: ${form.sector || '—'}\nStartdatum: ${form.startdatum || '—'}\n\nBericht:\n${form.bericht}`
-    )
-    window.location.href = `mailto:info@habico.be?subject=${subject}&body=${body}`
-    setVerzonden(true)
+    if (e.target.elements._honey?.value) return
+    setBezig(true)
+    setFout(false)
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${ONTVANGERS[0]}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Ploegaanvraag via website — ${form.naam} (${form.bedrijf})`,
+          _cc: ONTVANGERS.slice(1).join(','),
+          _template: 'table',
+          _captcha: 'false',
+          Naam: form.naam,
+          Bedrijf: form.bedrijf,
+          email: form.email,
+          Telefoon: form.tel,
+          Sector: form.sector || '—',
+          Startdatum: form.startdatum || '—',
+          Bericht: form.bericht,
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Verzenden mislukt')
+      setVerzonden(true)
+    } catch {
+      setFout(true)
+    } finally {
+      setBezig(false)
+    }
   }
 
   return (
@@ -109,32 +136,6 @@ export default function Contact() {
 
             {/* Formulier */}
             <div>
-              {/* Type selector */}
-              <div style={{ display: 'flex', background: '#fff', borderRadius: 14, border: '1px solid #E2E8F0', padding: 4, marginBottom: 24 }}>
-                <button
-                  onClick={() => setType('klant')}
-                  style={{
-                    flex: 1, padding: '12px 16px', borderRadius: 10, fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer', transition: 'all .2s',
-                    background: type === 'klant' ? '#0A1628' : 'transparent',
-                    color: type === 'klant' ? '#fff' : '#64748B',
-                    boxShadow: type === 'klant' ? '0 1px 4px rgba(0,0,0,.15)' : 'none',
-                  }}
-                >
-                  🏗️ Ik zoek personeel
-                </button>
-                <button
-                  onClick={() => setType('partner')}
-                  style={{
-                    flex: 1, padding: '12px 16px', borderRadius: 10, fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer', transition: 'all .2s',
-                    background: type === 'partner' ? '#2563EB' : 'transparent',
-                    color: type === 'partner' ? '#fff' : '#64748B',
-                    boxShadow: type === 'partner' ? '0 1px 4px rgba(37,99,235,.3)' : 'none',
-                  }}
-                >
-                  🤝 Ik lever personeel
-                </button>
-              </div>
-
               {verzonden ? (
                 <div className="card" style={{ padding: '48px 32px', textAlign: 'center' }}>
                   <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
@@ -146,6 +147,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="card" style={{ padding: 28 }}>
+                  <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
                     <div>
                       <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Naam *</label>
@@ -166,40 +168,47 @@ export default function Contact() {
                       <input name="tel" value={form.tel} onChange={update} type="tel" required style={inputBase} />
                     </div>
                   </div>
-                  {type === 'klant' && (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-                      <div>
-                        <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Sector / Profiel</label>
-                        <select name="sector" value={form.sector} onChange={update} style={inputBase}>
-                          <option value="">Selecteer sector</option>
-                          {['HVAC', 'Sloopwerken', 'Laswerken', 'Grondwerken', 'Elektriciteit', 'Dakwerken', 'Beton', 'Schilderwerken', 'Andere'].map(s => (
-                            <option key={s} value={s}>{s}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Wanneer heeft u personeel nodig?</label>
-                        <input name="startdatum" value={form.startdatum} onChange={update} type="date" style={inputBase} />
-                      </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Sector / Profiel</label>
+                      <select name="sector" value={form.sector} onChange={update} style={inputBase}>
+                        <option value="">Selecteer sector</option>
+                        {['HVAC', 'Sloopwerken', 'Laswerken', 'Grondwerken', 'Elektriciteit', 'Dakwerken', 'Beton', 'Schilderwerken', 'Andere'].map(s => (
+                          <option key={s} value={s}>{s}</option>
+                        ))}
+                      </select>
                     </div>
-                  )}
+                    <div>
+                      <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Wanneer heeft u personeel nodig?</label>
+                      <input name="startdatum" value={form.startdatum} onChange={update} type="date" style={inputBase} />
+                    </div>
+                  </div>
                   <div style={{ marginBottom: 24 }}>
                     <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>Bericht *</label>
                     <textarea
                       name="bericht" value={form.bericht} onChange={update} required rows={5}
-                      placeholder={type === 'klant' ? 'Beschrijf uw project, hoeveel mensen u nodig heeft en voor welke regio...' : 'Beschrijf uw beschikbare profielen, specialisaties en aantal mensen...'}
+                      placeholder="Beschrijf uw project, hoeveel mensen u nodig heeft en voor welke regio..."
                       style={{ ...inputBase, resize: 'none', lineHeight: 1.6 }}
                     />
                   </div>
+                  {fout && (
+                    <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 10, padding: 14, fontSize: 13, color: '#B91C1C', marginBottom: 16, lineHeight: 1.6 }}>
+                      Er ging iets mis bij het verzenden. Probeer opnieuw, mail naar{' '}
+                      <a href="mailto:info@habico.be" style={{ color: '#B91C1C', fontWeight: 600 }}>info@habico.be</a>{' '}
+                      of bel <a href="tel:+3289714100" style={{ color: '#B91C1C', fontWeight: 600 }}>+32 89 71 41 00</a>.
+                    </div>
+                  )}
                   <button
                     type="submit"
                     className="btn-primary"
+                    disabled={bezig}
                     style={{
                       width: '100%', justifyContent: 'center', fontSize: 16, padding: '15px 28px',
-                      background: type === 'klant' ? '#0A1628' : '#2563EB',
+                      background: '#0A1628',
+                      opacity: bezig ? 0.7 : 1, cursor: bezig ? 'wait' : 'pointer',
                     }}
                   >
-                    {type === 'klant' ? 'Vraag ploeg aan' : 'Word partner'}
+                    {bezig ? 'Bezig met verzenden…' : 'Vraag ploeg aan'}
                   </button>
                 </form>
               )}
