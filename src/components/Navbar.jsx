@@ -6,7 +6,7 @@ const links = [
   { to: '/profielen',           label: 'Profielen' },
   { to: '/hoe-werkt-het',       label: 'Hoe het werkt' },
   { to: '/referenties',         label: 'Referenties' },
-  { to: '/word-partner',        label: 'Word partner' },
+  { to: '/word-partner',        label: 'Partner worden' },
   { to: '/over-habico',         label: 'Over ons' },
 ]
 

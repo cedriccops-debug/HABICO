@@ -13,7 +13,7 @@ const profielLinks = [
 
 const nav = [
   { to: '/hoe-werkt-het',       label: 'Hoe het werkt' },
-  { to: '/word-partner',        label: 'Word partner' },
+  { to: '/word-partner',        label: 'Partner worden' },
   { to: '/referenties',         label: 'Referenties' },
   { to: '/over-habico',         label: 'Over ons' },
   { to: '/contact',             label: 'Contact' },

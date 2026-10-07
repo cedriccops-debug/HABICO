@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Watermerk from '../components/Watermerk'
 import ProfielCarousel from '../components/ProfielCarousel'
+import { testimonials } from '../data/testimonials'
 
 const usps = [
   { icon: '🔁', titel: 'Wij gaan voor langdurige samenwerking', tekst: 'En onze klanten werken jaren met ons samen, net omdat we consistent sterke ploegen aanleveren waar ze op kunnen rekenen.' },
@@ -15,12 +16,6 @@ const steps = [
   { nr: '03', titel: 'Partner Match',    tekst: 'Wij zoeken de juiste ploeg beschikkend over de nodige vaardigheden om jouw projecten succesvol op te leveren.' },
   { nr: '04', titel: 'Contract & admin', tekst: 'Limosa, A1 & Dimona geregeld. Klaar.' },
   { nr: '05', titel: 'Op de werf',       tekst: 'Uw ploeg staat er — wij blijven aanspreekpunt.' },
-]
-
-const testimonials = [
-  { bedrijf: 'Vandenberghe Bouw NV',      naam: 'Koen V.',  quote: 'HABICO leverde 3 HVAC-monteurs die naadloos inpasten in ons team. Limosa en A1 waren op dag 1 in orde.', context: '3 HVAC-monteurs · 18 maanden · 40+ wooneenheden' },
-  { bedrijf: 'Deconinck Sloopwerken', naam: 'Lars D.',  quote: 'HABICO reageerde binnen een dag en binnen de week stonden de mensen op de werf. Uitstekende service.', context: '2 sloopploegen · 6 maanden · industrieel complex' },
-  { bedrijf: 'Verhoeven Staalbouw',   naam: 'Petra M.', quote: 'TIG-lassers van HABICO — gecertificeerd, nauwkeurig en zelfstandig werkend. Precies wat wij nodig hadden.', context: '2 TIG-lassers · 3 maanden · roestvrij staal' },
 ]
 
 /* ── Shared section header (centred) ──────────────────────────────────────── */
@@ -150,22 +145,22 @@ export default function Homepage() {
             </div>
             <Link to="/referenties" className="btn-secondary" style={{ fontSize: 14, flexShrink: 0 }}>Alle referenties →</Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, max(340px, calc((100% - 20px) / 2))), 1fr))', gap: 20 }}>
             {testimonials.map(r => (
               <div key={r.bedrijf} className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', gap: 18 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#2563EB', fontSize: 14, flexShrink: 0 }}>{r.bedrijf[0]}</div>
                   <div>
                     <p style={{ fontWeight: 600, fontSize: 14, color: '#0F172A' }}>{r.bedrijf}</p>
-                    <p style={{ fontSize: 12, color: '#94A3B8' }}>{r.naam}</p>
+                    <p style={{ fontSize: 12, color: '#94A3B8' }}>{r.naam}, {r.functie}</p>
                   </div>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: 2 }}>
                     {[...Array(5)].map((_, i) => <span key={i} style={{ color: '#FBBF24', fontSize: 12 }}>★</span>)}
                   </div>
                 </div>
-                <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, fontStyle: 'italic', flex: 1 }}>"{r.quote}"</p>
-                <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: '#64748B', fontWeight: 500 }}>
-                  📊 {r.context}
+                <div style={{ flex: 1 }}>
+                  <p style={{ fontWeight: 700, fontSize: 15, color: '#0F172A', marginBottom: 6 }}>{r.titel}</p>
+                  <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, fontStyle: 'italic' }}>"{r.quote}"</p>
                 </div>
               </div>
             ))}
