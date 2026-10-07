@@ -9,9 +9,9 @@ export default function OverHabico() {
     { jaar: '2009', tekst: 'HABICO opgericht in Hasselt' },
     { jaar: '2012', tekst: 'Eerste internationale partnerschappen (Polen)' },
     { jaar: '2015', tekst: 'Uitbreiding naar Roemenië en Slowakije' },
-    { jaar: '2018', tekst: '100+ actieve plaatsingen bereikt' },
+    { jaar: '2018', tekst: '100+ succesvolle projecten bereikt' },
     { jaar: '2020', tekst: 'Gecertificeerde Limosa/A1-verwerking geautomatiseerd' },
-    { jaar: '2024', tekst: '500+ plaatsingen — actief in heel Europa' },
+    { jaar: '2024', tekst: '500+ succesvolle projecten — actief in heel Europa' },
   ]
 
   return (
@@ -85,9 +85,9 @@ export default function OverHabico() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {[
                   { getal: '17+', label: 'Jaar ervaring' },
-                  { getal: '500+', label: 'Plaatsingen' },
+                  { getal: '500+', label: 'Succesvolle projecten' },
                   { getal: '8', label: 'Landen' },
-                  { getal: '6', label: 'Sectoren' },
+                  { getal: '15+', label: 'Sectoren' },
                 ].map(s => (
                   <div key={s.label} style={{ background: '#fff', borderRadius: 12, padding: 16, textAlign: 'center', border: '1px solid #E2E8F0' }}>
                     <div style={{ fontSize: 28, fontWeight: 800, color: '#2563EB', marginBottom: 4 }}>{s.getal}</div>

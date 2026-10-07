@@ -78,7 +78,7 @@ export default function Homepage() {
               <div className="hero-badge-row">
                 {[
                   { label: '17+ jaar ervaring',    e: '🏆' },
-                  { label: '500+ plaatsingen',      e: '👷' },
+                  { label: '500+ succesvolle projecten',      e: '👷' },
                   { label: 'Juridisch conform',     e: '⚖️' },
                   { label: 'Actief in heel Europa', e: '🌍' },
                 ].map(t => (
@@ -172,10 +172,10 @@ export default function Homepage() {
       <section style={{ background: '#0A1628', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
         <Watermerk kant="rechts" />
         <div className="wrap" style={{ position: 'relative' }}>
-          <SectionHeader chip="11 specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Ontdek onze specialisaties. Elk team beschikt over ruime ervaring in zijn sector en is zorgvuldig geselecteerd op vakmanschap." light center />
+          <SectionHeader chip="15+ specialisaties" title={<>Op zoek naar <span style={{ color: '#7BC4E2' }}>versterking?</span></>} subtitle="Ontdek onze specialisaties. Elk team beschikt over ruime ervaring in zijn sector en is zorgvuldig geselecteerd op vakmanschap." light center />
           <ProfielCarousel />
           <div style={{ textAlign: 'center', marginTop: 32 }}>
-            <Link to="/profielen" className="btn-ghost-white" style={{ fontSize: 14 }}>Alle 11 profielen →</Link>
+            <Link to="/profielen" className="btn-ghost-white" style={{ fontSize: 14 }}>Alle 15+ profielen →</Link>
           </div>
         </div>
       </section>
@@ -215,7 +215,7 @@ export default function Homepage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
             {[
               { getal: '17+',  label: 'Jaar actief in detachering' },
-              { getal: '500+', label: 'Succesvolle plaatsingen' },
+              { getal: '500+', label: 'Succesvolle projecten' },
               { getal: '8',    label: 'Europese partnerlanden' },
               { getal: '1–3',  label: 'Weken tot op de werf' },
             ].map(s => (

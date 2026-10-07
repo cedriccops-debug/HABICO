@@ -44,7 +44,7 @@ export default function Referenties() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, textAlign: 'center' }}>
               {[
                 { getal: '17+', label: 'jaar ervaring' },
-                { getal: '200+', label: 'plaatsingen' },
+                { getal: '500+', label: 'succesvolle projecten' },
                 { getal: '8', label: 'landen actief' },
                 { getal: '98%', label: 'tevreden opdrachtgevers' },
               ].map(s => (

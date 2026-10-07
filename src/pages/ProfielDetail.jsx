@@ -4,7 +4,7 @@ import { profielen } from '../data/profielen'
 
 const HABICO_STATS = [
   { getal: '17+',  label: 'Jaar actief' },
-  { getal: '500+', label: 'Plaatsingen' },
+  { getal: '500+', label: 'Succesvolle projecten' },
   { getal: '8',    label: 'Landen' },
   { getal: '100%', label: 'Limosa & A1 geregeld' },
 ]
@@ -274,7 +274,7 @@ export default function ProfielDetail() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 28 }}>
-            <Link to="/profielen" style={{ fontSize: 14, fontWeight: 600, color: '#2563EB', textDecoration: 'none' }}>Alle 11 profielen →</Link>
+            <Link to="/profielen" style={{ fontSize: 14, fontWeight: 600, color: '#2563EB', textDecoration: 'none' }}>Alle 15+ profielen →</Link>
           </div>
         </div>
       </section>
