@@ -97,7 +97,7 @@ export default function Homepage2() {
               Vakkundige teams beschikbaar!
             </div>
             <h1 className="hero-h1">
-              Ervaren bouwploegen,{' '}
+              Gemotiveerde arbeid,{' '}
               <span style={{ color: '#7BC4E2' }}>direct inzetbaar</span>
             </h1>
             <p className="hero-lead">
