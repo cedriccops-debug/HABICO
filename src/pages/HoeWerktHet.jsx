@@ -12,7 +12,7 @@ const stappen = [
     nr: 2,
     titel: 'Behoefteanalyse',
     tekst: 'Een korte intake van 15 min — telefonisch of op locatie. Wij bespreken uw project, vereisten en budget.',
-    detail: 'Wij stellen gerichte vragen: welke certificaten zijn vereist, wat zijn de werfomstandigheden, welk contractmodel past best?',
+    detail: 'Wij stellen gerichte vragen: welke certificaten zijn vereist en wat zijn de werfomstandigheden?',
   },
   {
     nr: 3,
@@ -40,12 +40,6 @@ const contractmodellen = [
     omschrijving: 'U bestelt een uitgevoerde taak of hoeveelheid werk. HABICO of de partner is verantwoordelijk voor de uitvoering.',
     voordelen: ['Vaste prijs per opdracht', 'Resultaatgericht', 'Minder operationele opvolging'],
     gebruik: 'Ideaal voor afgelijnde deelwerken (bv. volledige riolering leggen, dak waterdicht maken).',
-  },
-  {
-    naam: 'Dienstencontract',
-    omschrijving: 'U huurt specifieke vaklieden in per dag/uur. Zij werken onder uw werfleiding.',
-    voordelen: ['Volledige controle over uitvoering', 'Flexibel aanpasbaar', 'Transparant uurtarief'],
-    gebruik: 'Ideaal als u al een eigen werfleider heeft en mensen wil aanvullen in drukke periodes.',
   },
 ]
 
@@ -133,12 +127,12 @@ export default function HoeWerktHet() {
       <section style={{ background: '#EFF6FF', borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE', padding: '96px 0' }}>
         <div className="wrap">
           <h2 style={{ fontSize: 'clamp(1.75rem,3vw,2.625rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.025em', color: '#0F172A', marginBottom: 12, textAlign: 'center' }}>
-            Contractmodellen
+            Contractmodel
           </h2>
           <p style={{ fontSize: 15, color: '#64748B', textAlign: 'center', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.7 }}>
-            Eenvoudig uitgelegd — geen juridisch jargon. U kiest het model dat past bij uw project en risicoverdeling.
+            Eenvoudig uitgelegd — geen juridisch jargon.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 20, maxWidth: 820, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 20, maxWidth: 440, margin: '0 auto' }}>
             {contractmodellen.map(c => (
               <div key={c.naam} className="card" style={{ padding: 24 }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: '#0F172A', marginBottom: 12 }}>{c.naam}</h3>

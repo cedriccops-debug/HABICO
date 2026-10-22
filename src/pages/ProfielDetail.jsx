@@ -201,7 +201,7 @@ export default function ProfielDetail() {
                 </div>
               )}
               <Link to="/hoe-werkt-het" style={{ fontSize: 14, fontWeight: 600, color: profiel.kleur, textDecoration: 'none' }}>
-                Meer over werkwijze & contractmodellen →
+                Meer over werkwijze & contractmodel →
               </Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
