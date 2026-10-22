@@ -232,7 +232,7 @@ export default function ProfielDetail() {
                   { nr: 1, tekst: 'U neemt contact op' },
                   { nr: 2, tekst: 'Wij matchen het juiste profiel' },
                   { nr: 3, tekst: 'Contract & admin geregeld' },
-                  { nr: 4, tekst: `${profiel.naam} staat op de werf` },
+                  { nr: 4, tekst: `${profiel.naam} ${profiel.inzetTekst ?? 'staat op de werf'}` },
                 ].map(s => (
                   <div key={s.nr} style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 14, padding: 20, textAlign: 'center' }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: profiel.kleur, color: '#fff', fontWeight: 800, fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>{s.nr}</div>

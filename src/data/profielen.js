@@ -591,6 +591,8 @@ export const profielen = [
     afkorting: 'PM',
     foto: '/professions-cutout/productiemedewerker-v2.png',
     heroFoto: '/professions-hero/productiemedewerker.jpg',
+    // Productiewerk gebeurt niet op een werf: stap 4 van het stappenplan wordt "Productiemedewerker is actief".
+    inzetTekst: 'is actief',
     tagline: 'Gemotiveerde handen op de productievloer',
     intro: 'Productiemedewerkers houden uw lijn draaiende. HABICO levert gemotiveerde operatoren voor machinebediening, assemblage en verpakking — inzetbaar in ploegen en snel op te schalen bij piekproductie.',
     certificaten: ['VCA', 'Limosa', 'A1-attest', 'Heftruck', 'HACCP op aanvraag'],
