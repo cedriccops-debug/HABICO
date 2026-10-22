@@ -580,6 +580,67 @@ export const profielen = [
     ],
   },
   {
+    slug: 'productiemedewerker',
+    // Zacht afbreekstreepje: op smalle profielkaarten breekt de naam als "Productie-medewerker".
+    naam: 'Productie­medewerker',
+    meervoud: 'Productiemedewerkers',
+    pc: '111 of 118',
+    pcLabel: 'Metaalbouw of voedingsnijverheid',
+    pcToelichting: 'Bij productiewerk bepaalt de hoofdactiviteit van de opdrachtgever het paritair comité: PC 111 in de metaalverwerking, PC 118 in de voedingsnijverheid, of een ander sectoraal PC zoals chemie, hout of kunststof. Wij bevestigen het juiste PC per opdracht.',
+    // Kleur = effen achtergrond van de herofoto, zodat de foto naadloos in de hero overloopt.
+    kleur: '#136169',
+    kleurLicht: '#E8F3F3',
+    afkorting: 'PM',
+    foto: '/professions-cutout/productiemedewerker-v2.png',
+    heroFoto: '/professions-hero/productiemedewerker.jpg',
+    tagline: 'Gemotiveerde handen op de productievloer',
+    intro: 'Productiemedewerkers houden uw lijn draaiende. HABICO levert gemotiveerde operatoren voor machinebediening, assemblage en verpakking — inzetbaar in ploegen en snel op te schalen bij piekproductie.',
+    certificaten: ['VCA', 'Limosa', 'A1-attest', 'Heftruck', 'HACCP op aanvraag'],
+    habico_voordeel: 'Productiewerk vraagt vooral betrouwbaarheid: elke dag op tijd, aan hetzelfde tempo. HABICO selecteert op werkattitude en ervaring in ploegenwerk. Bij uitval of piekproductie volstaat één telefoontje.',
+    kernvaardigheden: [
+      {
+        titel: 'Machinebediening',
+        tekst: 'Productiemachines en -lijnen bedienen, bijvullen en omstellen volgens werkinstructie. Storingen tijdig opmerken en melden aan de ploegleider.',
+        icon: '⚙️',
+      },
+      {
+        titel: 'Assemblage en handwerk',
+        tekst: 'Onderdelen samenbouwen, ontbramen, verpakken en labelen — snel én correct, ook bij korte cyclustijden en hoge volumes.',
+        icon: '🔩',
+      },
+      {
+        titel: 'Kwaliteitscontrole',
+        tekst: 'Producten visueel en met meetmiddelen zoals schuifmaat of kaliber controleren. Afkeur apart zetten en registreren voor de kwaliteitsdienst.',
+        icon: '🔍',
+      },
+      {
+        titel: 'Werkinstructies en 5S',
+        tekst: 'Werkinstructies en productieplanning correct volgen en de werkpost ordelijk houden — zodat elke ploeg hetzelfde resultaat levert.',
+        icon: '📋',
+      },
+      {
+        titel: 'Heftruck en interne logistiek',
+        tekst: 'Grondstoffen aanvoeren en afgewerkte producten afvoeren met heftruck of transpallet. Voorraad aan de lijn bewaken zodat de productie niet stilvalt.',
+        icon: '📦',
+      },
+      {
+        titel: 'Tempo en ploegenwerk',
+        tekst: 'Werken in twee- of drieploegen, ook nacht- of weekendwerk. Een constant tempo aanhouden zonder in te boeten op kwaliteit.',
+        icon: '⏱️',
+      },
+      {
+        titel: 'Veiligheid en hygiëne',
+        tekst: 'Machinebeveiligingen respecteren, lockout/tagout en PBM\'s correct toepassen. In de voedingsindustrie: HACCP- en hygiëneregels strikt naleven.',
+        icon: '🦺',
+      },
+      {
+        titel: 'Teamwork aan de lijn',
+        tekst: 'Afstemmen met collega\'s, ploegleider en kwaliteitsdienst. Problemen helder doorgeven zodat de lijn blijft draaien.',
+        icon: '🤝',
+      },
+    ],
+  },
+  {
     slug: 'grondwerker',
     naam: 'Grondwerker',
     meervoud: 'Grondwerkers',

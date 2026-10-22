@@ -57,7 +57,7 @@ export default function ProfielDetail() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section style={{ background: profiel.kleur, position: 'relative', overflow: 'hidden', minHeight: 460 }}>
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 0, position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', minHeight: 460, alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: profiel.heroFoto ? '1fr 460px' : '1fr 360px', columnGap: profiel.heroFoto ? 40 : 0, minHeight: 460, alignItems: 'center' }}>
             <div style={{ paddingTop: 64, paddingBottom: 64 }}>
               <Link to="/profielen" style={{ display: 'inline-block', fontSize: 13, color: 'rgba(255,255,255,.7)', textDecoration: 'none', marginBottom: 24 }}>
                 ← Alle profielen
@@ -79,18 +79,28 @@ export default function ProfielDetail() {
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', height: '100%', overflow: 'hidden' }}>
-              <img
-                src={`/professions-cutout/${profiel.slug}-v2.png`}
-                alt={profiel.naam}
-                style={{
-                  height: 500,
-                  width: 'auto',
-                  objectFit: 'contain',
-                  objectPosition: 'bottom',
-                  display: 'block',
-                }}
-                onError={e => e.target.style.display = 'none'}
-              />
+              {/* Herofoto met effen achtergrond in profiel.kleur; anders de uitgeknipte portretfoto */}
+              {profiel.heroFoto ? (
+                <img
+                  src={profiel.heroFoto}
+                  alt={profiel.meervoud}
+                  style={{ height: 430, width: 'auto', display: 'block' }}
+                  onError={e => e.target.style.display = 'none'}
+                />
+              ) : (
+                <img
+                  src={`/professions-cutout/${profiel.slug}-v2.png`}
+                  alt={profiel.naam}
+                  style={{
+                    height: 500,
+                    width: 'auto',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom',
+                    display: 'block',
+                  }}
+                  onError={e => e.target.style.display = 'none'}
+                />
+              )}
             </div>
           </div>
         </div>
