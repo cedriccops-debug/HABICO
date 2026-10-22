@@ -225,7 +225,7 @@ export default function ProfielDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 48, alignItems: 'start' }}>
             <div>
               <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)', fontWeight: 800, color: '#0F172A', letterSpacing: '-.025em', marginBottom: 32 }}>
-                Van aanvraag tot {profiel.naam.toLowerCase()} op de werf
+                Van aanvraag tot {profiel.naam.toLowerCase()} {profiel.inzetTitel ?? 'op de werf'}
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
                 {[
