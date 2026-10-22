@@ -189,14 +189,17 @@ export default function ProfielDetail() {
                 Arbeidsdetachering zoals het hoort: volledig conform de Belgische arbeids- en loonvoorwaarden. Alle vereiste documenten ontvangt u vóór de opstart.
               </p>
               {/* Paritair comité — met nuance, want het definitieve PC volgt uit
-                  de hoofdactiviteit van de opdrachtgever, niet uit het beroep. */}
-              <div style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 14, padding: 20, marginBottom: 24 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
-                  <span style={{ fontSize: 20, fontWeight: 800, color: profiel.kleur, letterSpacing: '-.02em' }}>PC {profiel.pc}</span>
-                  <span style={{ fontSize: 13, color: '#CBD5E1', fontWeight: 600 }}>{profiel.pcLabel}</span>
+                  de hoofdactiviteit van de opdrachtgever, niet uit het beroep.
+                  Profielen zonder pc tonen dit blok niet. */}
+              {profiel.pc && (
+                <div style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 14, padding: 20, marginBottom: 24 }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
+                    <span style={{ fontSize: 20, fontWeight: 800, color: profiel.kleur, letterSpacing: '-.02em' }}>PC {profiel.pc}</span>
+                    <span style={{ fontSize: 13, color: '#CBD5E1', fontWeight: 600 }}>{profiel.pcLabel}</span>
+                  </div>
+                  <p style={{ fontSize: 12.5, color: '#94A3B8', lineHeight: 1.6 }}>{profiel.pcToelichting}</p>
                 </div>
-                <p style={{ fontSize: 12.5, color: '#94A3B8', lineHeight: 1.6 }}>{profiel.pcToelichting}</p>
-              </div>
+              )}
               <Link to="/hoe-werkt-het" style={{ fontSize: 14, fontWeight: 600, color: profiel.kleur, textDecoration: 'none' }}>
                 Meer over werkwijze & contractmodellen →
               </Link>

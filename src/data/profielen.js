@@ -584,9 +584,7 @@ export const profielen = [
     // Zacht afbreekstreepje: op smalle profielkaarten breekt de naam als "Productie-medewerker".
     naam: 'Productie­medewerker',
     meervoud: 'Productiemedewerkers',
-    pc: '111 of 118',
-    pcLabel: 'Metaalbouw of voedingsnijverheid',
-    pcToelichting: 'Bij productiewerk bepaalt de hoofdactiviteit van de opdrachtgever het paritair comité: PC 111 in de metaalverwerking, PC 118 in de voedingsnijverheid, of een ander sectoraal PC zoals chemie, hout of kunststof. Wij bevestigen het juiste PC per opdracht.',
+    // Geen pc-velden: voor productiewerk tonen we bewust geen paritair comité.
     // Kleur = effen achtergrond van de herofoto, zodat de foto naadloos in de hero overloopt.
     kleur: '#136169',
     kleurLicht: '#E8F3F3',
